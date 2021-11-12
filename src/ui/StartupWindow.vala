@@ -1,15 +1,16 @@
+using Adw;
 using Gtk;
 
 namespace DungeonJournal
 {
     [GtkTemplate (ui = "/io/github/trytonvanmeer/DungeonJournal/ui/StartupWindow.ui")]
-    public class StartupWindow : Window
+    public class StartupWindow : Adw.Window
     {
         private DungeonJournal.ApplicationWindow window;
 
-        [GtkChild] private Image logo;
-        [GtkChild] private Box recents_box;
-        [GtkChild] private ListBox recents_listbox;
+        [GtkChild] private unowned Image logo;
+        [GtkChild] private unowned Box recents_box;
+        [GtkChild] private unowned ListBox recents_listbox;
 
         private bool done_startup { get; set; default=false; }
 
@@ -20,17 +21,18 @@ namespace DungeonJournal
 
             this.logo.icon_name = Config.APP_ID;
             this.setup_recents();
+            
         }
 
-        public override void show_all()
+        public void show_all()
         {
-            base.show_all();
+            base.present();
             this.hide_listbox_if_empty();
         }
 
         private void hide_listbox_if_empty()
         {
-            if (this.recents_listbox.get_children().length() == 0)
+            if (this.recents_listbox.observe_children().get_n_items() == 0)
             {
                 this.recents_box.hide();
             }
@@ -43,21 +45,23 @@ namespace DungeonJournal
             foreach (var file_path in recents)
             {
                 var row = new RecentsCharacterRow(file_path);
-                this.recents_listbox.add(row);
+                this.recents_listbox.append(row);
             }
         }
 
         private void finish_startup()
         {
             this.done_startup = true;
-            this.window.show_all();
+            this.window.present();
             this.destroy();
         }
 
         [GtkCallback]
         private void on_open()
-        {
-            var res = this.window.on_open(this);
+        { 
+            this.window.on_open(this);
+
+            var res = this.window.startup_finished;
 
             if (res)
             {

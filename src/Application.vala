@@ -1,8 +1,8 @@
-using Gtk;
+using Adw;
 
 namespace DungeonJournal
 {
-    public class App : Gtk.Application
+    public class App : Adw.Application
     {
         public static DungeonJournal.Settings settings;
         public DungeonJournal.ApplicationWindow window;
@@ -70,6 +70,7 @@ namespace DungeonJournal
             string[] authors =
             {
                 "Tryton Van Meer <trytonvanmeer@gmail.com>",
+                "David Chamorro <daved3464@gmail.com>"
             };
 
             var version = Config.VERSION;
@@ -87,7 +88,7 @@ namespace DungeonJournal
                 comments: _("Create Characters"),
                 copyright: "© 2019 Tryton Van Meer",
                 authors: authors,
-                website: "https://github.com/tryton-vanmeer/DungeonJournal",
+                website: "https://github.com/daved3464/DungeonJournal",
                 website_label: _("GitHub Homepage"),
                 version: version,
                 license_type: Gtk.License.GPL_3_0
@@ -103,7 +104,7 @@ namespace DungeonJournal
         Intl.textdomain(Config.GETTEXT_PACKAGE);
         Intl.bind_textdomain_codeset(Config.GETTEXT_PACKAGE, "utf-8");
 
-        Gtk.init(ref args);
+        Gtk.init();
 
         var app = new App();
 

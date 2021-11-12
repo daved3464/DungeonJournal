@@ -14,8 +14,8 @@ namespace DungeonJournal
             this.set_can_focus(false);
 
             this.separator = new Separator(Orientation.HORIZONTAL);
-            this.add(separator);
-            this.show_all();
+            
+            this.show();
         }
     }
 }

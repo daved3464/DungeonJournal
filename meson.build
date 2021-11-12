@@ -22,36 +22,31 @@ endif
 
 # Dependencies
 add_project_arguments(
-  '--target-glib=2.50',
+  '--target-glib=2.70',
   language: 'vala'
 )
 
 math = meson.get_compiler('c').find_library('m')
 
-gio = dependency('gio-2.0', version: '>= 2.50')
-glib = dependency('glib-2.0', version: '>= 2.50')
-glib_json = dependency('json-glib-1.0', version: '>= 0.29.2')
-gtk = dependency('gtk+-3.0', version: '>= 3.22')
+gio = dependency('gio-2.0')
+glib = dependency('glib-2.0')
+glib_json = dependency('json-glib-1.0')
+gtk = dependency('gtk4')
 gee = dependency('gee-0.8')
 
-libhandy = dependency('libhandy-1', version: '>= 0.80.0', required: false)
-if not libhandy.found()
-  libhandy_subproj = subproject(
-    'libhandy',
-    default_options: [
-      'examples=false',
-      'glade_catalog=disabled',
-      'tests=false',
-    ]
-  )
+libadwaita_dep = dependency('libadwaita-1', version: '>= 1.0.0', required: false)
 
-  # When using libhandy as subproject, make sure we get the VAPI file
-  libhandy = declare_dependency(
-    dependencies: [
-      libhandy_subproj.get_variable('libhandy_dep'),
-      libhandy_subproj.get_variable('libhandy_vapi'),
-    ]
-  )
+if not libadwaita_dep.found()
+libadwaita = subproject(
+  'libadwaita',
+  install: false,
+  default_options: [
+    'examples=false',
+    'package_subdir=my-project-name',
+    'tests=false',
+  ]
+)
+libadwaita_dep = libadwaita.get_variable('libadwaita_dep')
 endif
 
 # Configuration

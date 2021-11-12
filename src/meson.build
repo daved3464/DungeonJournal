@@ -5,7 +5,7 @@ deps = [
   glib_json,
   gtk,
   gee,
-  libhandy,
+  libadwaita_dep,
 ]
 
 sources = [
@@ -36,7 +36,6 @@ sources = [
 
 c_args = [
   '-include', 'config.h',
-  '-DHANDY_USE_UNSTABLE_API',
   '-DLOCALEDIR="@0@"'.format(locale_dir),
 ]
 
