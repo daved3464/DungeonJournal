@@ -1,17 +1,11 @@
 using Gtk;
 using Gee;
-using Adw;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/trytonvanmeer/DungeonJournal/ui/ApplicationWindow.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/ApplicationWindow.ui")]
     public class ApplicationWindow : Adw.ApplicationWindow
-    {
-        [GtkChild] private unowned Stack stack;
-        [GtkChild] private unowned Squeezer squeezer;
-        [GtkChild] private unowned ViewSwitcher headerbar_switcher;
-        [GtkChild] private unowned ViewSwitcherBar bottom_switcher;
-
+    {              
         private CharacterInfoPage page_info;
         private CharacterSkillsPage page_skills;
         private CharacterInventoryPage page_inventory;
@@ -30,7 +24,7 @@ namespace DungeonJournal
             this.character = new CharacterSheet();
             this.character_path = null;
 
-            set_help_overlay(new ShortcutsWindow());
+            /*  set_help_overlay(new ShortcutsWindow());  */
 
             setup_style();
             setup_view();
@@ -42,10 +36,7 @@ namespace DungeonJournal
 
         private void setup_style()
         {
-            /*  var provider = new Gtk.CssProvider();
-            provider.load_from_resource("/io/github/trytonvanmeer/DungeonJournal/dungeonjournal.css");
 
-            Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), provider, Gtk.STYLE_PROVIDER_PRIORITY_USER);  */
         }
 
         private void setup_view()
@@ -54,9 +45,9 @@ namespace DungeonJournal
             this.page_skills = new CharacterSkillsPage();
             this.page_inventory = new CharacterInventoryPage();
 
-            this.stack.add_titled(this.page_info, "info", _("Info"));
+            /*  this.stack.add_titled(this.page_info, "info", _("Info"));
             this.stack.add_titled(this.page_skills, "skills", _("Skills"));
-            this.stack.add_titled(this.page_inventory, "inventory", _("Inventory"));
+            this.stack.add_titled(this.page_inventory, "inventory", _("Inventory"));  */
         }
 
         private void bind_character()
@@ -64,13 +55,7 @@ namespace DungeonJournal
             this.page_info.bind_character(this.character);
             this.page_skills.bind_character(this.character);
             this.page_inventory.bind_character(this.character);
-        }
-
-        [GtkCallback]
-        public void on_headerbar_squeezer_notify()
-        {
-            this.bottom_switcher.reveal = this.squeezer.visible_child != this.headerbar_switcher;
-        }
+        }        
 
         public void on_open(Gtk.Window? parent=this)
         {
@@ -85,6 +70,8 @@ namespace DungeonJournal
             var filter = new FileFilter();
             filter.add_mime_type("application/json");
             dialog.set_filter(filter);
+
+            dialog.show();
 
             dialog.response.connect_after((res) => {
                 if (res == ResponseType.ACCEPT){

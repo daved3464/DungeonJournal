@@ -3,7 +3,7 @@ using Gee;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/trytonvanmeer/DungeonJournal/ui/CharacterInventoryPage.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/CharacterInventoryPage.ui")]
     public class CharacterInventoryPage : Box
     {
         [GtkChild] protected unowned ListBox currency_listbox;
@@ -77,9 +77,7 @@ namespace DungeonJournal
 
             // Clear attacks_listbox
             
-            for (var i = 0; i < this.attacks_list.get_n_items(); i++){
-                this.attacks_list.set_model(null);
-            }
+            this.attacks_list.set_model(null);
 
             foreach (var attack in this.attacks)
             {
@@ -90,9 +88,7 @@ namespace DungeonJournal
             character.bind("items", this, "items");
 
             // Clear items_listbox
-            for (var i = 0; i < this.items_list.get_n_items(); i++){
-                this.attacks_list.set_model(null);
-            }
+            this.items_list.set_model(null);
 
             foreach (var item in this.items)
             {
@@ -102,21 +98,17 @@ namespace DungeonJournal
 
         private void add_attack_row(ref CharacterAttack attack, bool collapse = false)
         {
-            var pos = (int) this.attacks_list.get_n_items() - 1;
             var row = new CharacterAttackRow(ref attack);
-
             if (collapse)
             {
                 row.collapse_row();
             }            
 
-            this.attacks_listbox.insert(row, pos);
-            this.attacks_listbox.insert(new SeparatorRow(), pos + 1);
+            this.attacks_listbox.append(row); 
         }
 
         private void add_item_row(ref CharacterItem item, bool collapse = false)
-        {
-            var pos = (int) this.items_list.get_n_items() - 1;
+        {            
             var row = new CharacterItemRow(ref item);
 
             if (collapse)
@@ -124,8 +116,7 @@ namespace DungeonJournal
                 row.collapse_row();
             }
 
-            this.items_listbox.insert(row, pos);
-            this.items_listbox.insert(new SeparatorRow(), pos + 1);
+            this.items_listbox.append(row);
         }
 
         [GtkCallback]
@@ -143,12 +134,9 @@ namespace DungeonJournal
             {
                 // Delete Attack
                 var attack_row = (CharacterAttackRow) row;
-                this.attacks.remove(attack_row.attack);
-                this.attacks_listbox.remove(attack_row);
 
-                // And remove the SeparatorRow
-                var pos = (int) this.attacks_list.get_n_items() - 2;
-                this.attacks_listbox.remove(this.attacks_listbox.get_row_at_index(pos));
+                this.attacks.remove(attack_row.attack);
+                this.attacks_listbox.remove(attack_row);                
             }
         }
 
@@ -169,10 +157,6 @@ namespace DungeonJournal
                 var item_row = (CharacterItemRow) row;
                 this.items.remove(item_row.item);
                 this.items_listbox.remove(item_row);
-
-                // And remove the SeparatorRow
-                var pos = (int) this.items_list.get_n_items() - 2;
-                this.items_listbox.remove(this.items_listbox.get_row_at_index(pos));
             }
         }
     }

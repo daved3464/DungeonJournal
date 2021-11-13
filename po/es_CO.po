@@ -1,0 +1,135 @@
+# David Chamorro <daved3464@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-13 13:09-0500\n"
+"PO-Revision-Date: 2021-11-13 14:18-0500\n"
+"Last-Translator: David Chamorro <daved3464@gmail.com>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
+"Language: es_CO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.08.3\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/ui/CharacterAttackRow.ui:123
+msgid "_Weapon"
+msgstr "Arma"
+
+#: data/ui/CharacterAttackRow.ui:146
+msgid "_Range"
+msgstr "Rango"
+
+#: data/ui/CharacterAttackRow.ui:170
+msgid "_Attack Bonus"
+msgstr "Bonus de Daño"
+
+#: data/ui/CharacterAttackRow.ui:193
+msgid "_Damage/Type"
+msgstr "Daño/Tipo"
+
+#: data/ui/CharacterFeatRow.ui:91 data/ui/CharacterItemRow.ui:108
+msgid "_Name"
+msgstr "Nombre"
+
+#: data/ui/CharacterFeatRow.ui:117 data/ui/CharacterItemRow.ui:209
+msgid "_Description"
+msgstr "Descripción"
+
+#: data/ui/CharacterInfoPage.ui:40
+msgid "_Info"
+msgstr "Info"
+
+#: data/ui/CharacterInfoPage.ui:69
+msgid "_Stats"
+msgstr "Estadísticas"
+
+#: data/ui/CharacterInfoPage.ui:98
+msgid "_Features"
+msgstr "Características"
+
+#: data/ui/CharacterInventoryPage.ui:41
+msgid "_Currency"
+msgstr "Moneda"
+
+#: data/ui/CharacterInventoryPage.ui:70
+msgid "_Attacks"
+msgstr "Ataques"
+
+#: data/ui/CharacterInventoryPage.ui:117
+msgid "_Items"
+msgstr "Objetos"
+
+#: data/ui/CharacterItemRow.ui:132
+msgid "_Quantity"
+msgstr "Cantidad"
+
+#: data/ui/CharacterItemRow.ui:158
+msgid "_Cost"
+msgstr "Costo"
+
+#: data/ui/CharacterItemRow.ui:182
+msgid "_Weight"
+msgstr "Peso"
+
+#: data/ui/CharacterSkillsPage.ui:40
+msgid "_Strength"
+msgstr "Fuerza"
+
+#: data/ui/CharacterSkillsPage.ui:69
+msgid "_Dexterity"
+msgstr "Destreza"
+
+#: data/ui/CharacterSkillsPage.ui:98
+msgid "_Constitution"
+msgstr "Constitución"
+
+#: data/ui/CharacterSkillsPage.ui:127
+msgid "_Intelligence"
+msgstr "Inteligencia"
+
+#: data/ui/CharacterSkillsPage.ui:156
+msgid "_Wisdom"
+msgstr "Sabiduría"
+
+#: data/ui/CharacterSkillsPage.ui:185
+msgid "_Charisma"
+msgstr "Carisma"
+
+#: data/ui/ShortcutsWindow.ui:12
+msgid "_General"
+msgstr "General"
+
+#: data/ui/ShortcutsWindow.ui:18
+msgctxt "shortcut window"
+msgid "_Open a Character"
+msgstr "Buscar Personaje"
+
+#: data/ui/ShortcutsWindow.ui:25
+msgctxt "shortcut window"
+msgid "_Save the Character"
+msgstr "Guardar el personaje"
+
+#: data/ui/ShortcutsWindow.ui:32
+msgctxt "shortcut window"
+msgid "_Save the Character with a new filename"
+msgstr "Guardar el personaje con un nombre nuevo"
+
+#: data/ui/StartupWindow.ui:69
+msgid "_Create some characters"
+msgstr "Crear algunos personajes"
+
+#: data/ui/StartupWindow.ui:97
+msgid "_Open Character"
+msgstr "Buscar personaje"
+
+#: data/ui/StartupWindow.ui:114
+msgid "_New Character"
+msgstr "Nuevo personaje"
+
+#: data/ui/StartupWindow.ui:141
+msgid "_Recent Characters"
+msgstr "Personajes Recientes"

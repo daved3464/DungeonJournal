@@ -69,7 +69,7 @@ namespace DungeonJournal
         {
             string[] authors =
             {
-                "Tryton Van Meer <trytonvanmeer@gmail.com>",
+                "Tryton Van Meer <daved3464@gmail.com>",
                 "David Chamorro <daved3464@gmail.com>"
             };
 

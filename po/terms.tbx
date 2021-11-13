@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE martif PUBLIC 'ISO 12200:1999A//DTD MARTIF core (DXFcdV04)//EN' 'TBXcdv04.dtd'>
+<martif xml:lang="en_US" type="TBX">
+    <text>
+        <body>
+        <termEntry id="david_chamorro-0">
+        <langSet xml:lang="en-US">
+          <tig>
+            <term>name</term>
+          </tig>
+        </langSet>
+        <langSet xml:lang="es">
+          <tig>
+            <term>nombre</term>
+          </tig>
+        </langSet>
+      </termEntry>
+    <termEntry id="david_chamorro-1">
+        <langSet xml:lang="en-US">
+          <tig>
+            <term>character</term>
+          </tig>
+        </langSet>
+        <langSet xml:lang="es">
+          <tig>
+            <term>personaje</term>
+          </tig>
+        </langSet>
+      </termEntry>
+    </body>
+    </text>
+</martif>

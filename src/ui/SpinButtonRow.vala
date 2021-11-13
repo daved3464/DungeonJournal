@@ -3,7 +3,7 @@ using Adw;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/trytonvanmeer/DungeonJournal/ui/SpinButtonRow.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/SpinButtonRow.ui")]
     public class SpinButtonRow: ListBoxRow
     {
         [GtkChild] protected unowned Label label;

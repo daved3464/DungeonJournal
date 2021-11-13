@@ -10,7 +10,7 @@ namespace DungeonJournal
 
         public Settings()
         {
-            this.settings = new GLib.Settings("io.github.trytonvanmeer.DungeonJournal");
+            this.settings = new GLib.Settings("io.github.daved3464.DungeonJournal");
 
             this._window_width = this.settings.get_int("window-width");
             this._window_height = this.settings.get_int("window-height");

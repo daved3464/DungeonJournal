@@ -3,7 +3,7 @@ using Gee;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/trytonvanmeer/DungeonJournal/ui/CharacterSkillsPage.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/CharacterSkillsPage.ui")]
     public class CharacterSkillsPage : Box
     {
         [GtkChild] protected unowned ListBox strength_listbox;

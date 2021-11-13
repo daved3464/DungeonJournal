@@ -1,7 +1,7 @@
 # Desktop file
 desktop_file = i18n.merge_file(
-  input: 'io.github.trytonvanmeer.DungeonJournal.desktop.in',
-  output: 'io.github.trytonvanmeer.DungeonJournal.desktop',
+  input: 'io.github.daved3464.DungeonJournal.desktop.in',
+  output: 'io.github.daved3464.DungeonJournal.desktop',
   type: 'desktop',
   po_dir: '../po',
   install: true,
@@ -17,9 +17,8 @@ endif
 
 # Appdata
 appstream_file = i18n.merge_file(
-  'io.github.trytonvanmeer.DungeonJournal.appdata.xml',
-  input: 'io.github.trytonvanmeer.DungeonJournal.appdata.xml.in',
-  output: 'io.github.trytonvanmeer.DungeonJournal.appdata.xml',
+  input: 'io.github.daved3464.DungeonJournal.appdata.xml.in',
+  output: 'io.github.daved3464.DungeonJournal.appdata.xml',
   po_dir: '../po',
   install: true,
   install_dir: join_paths(get_option('datadir'), 'appdata')
@@ -32,7 +31,7 @@ if appstream_util.found()
   )
 endif
 
-install_data('io.github.trytonvanmeer.DungeonJournal.gschema.xml', install_dir: get_option('datadir') + '/glib-2.0/schemas/')
+install_data('io.github.daved3464.DungeonJournal.gschema.xml', install_dir: get_option('datadir') + '/glib-2.0/schemas/')
 
 compile_schemas = find_program('glib-compile-schemas', required: false)
 if compile_schemas.found()
@@ -40,12 +39,6 @@ if compile_schemas.found()
     args: ['--strict', '--dry-run', meson.current_source_dir()]
   )
 endif
-
-# Resources
-resources = gnome.compile_resources('dungeonjournal-resources',
-    'dungeonjournal.gresource.xml',
-    c_name: 'dungeonjournal'
-)
 
 # Icons
 install_data(

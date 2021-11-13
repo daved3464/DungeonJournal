@@ -152,7 +152,7 @@ namespace DungeonJournal
             return default_serialize_property(property_name, @value, pspec);
         }
 
-        public override bool deserialize_property(string property_name, out Value @value, ParamSpec pspec, Json.Node property_node)
+        /*  public override bool deserialize_property(string property_name, out Value @value, ParamSpec pspec, Json.Node property_node)
         {
             // json-glib currently has an issue in v1.4 where default_deserialize_property fails.
             // https://gitlab.gnome.org/GNOME/json-glib/-/issues/39
@@ -197,9 +197,9 @@ namespace DungeonJournal
             }
 
             return true;
-        }
+        }  */
 
-        private ArrayList get_arraylist_for_type<G>(Json.Array array)
+        /*  private ArrayList get_arraylist_for_type<G>(Json.Array array)
         {
             var list = new ArrayList<G>();
 
@@ -210,6 +210,6 @@ namespace DungeonJournal
             });
 
             return list;
-        }
+        }  */
     }
 }

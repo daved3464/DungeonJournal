@@ -1,14 +1,4 @@
-deps = [
-  math,
-  gio,
-  glib,
-  glib_json,
-  gtk,
-  gee,
-  libadwaita_dep,
-]
-
-sources = [
+dragonjournal_sources = [
   'Application.vala',
   'Util.vala',
   'Settings.vala',
@@ -34,16 +24,32 @@ sources = [
   'ui/CharacterItemRow.vala',
 ]
 
+
+dragonjournal_deps = [
+  meson.get_compiler('c').find_library('m'),
+  dependency('gio-2.0', version: '>= 2.50'),
+  dependency('glib-2.0'),
+  dependency('json-glib-1.0'),
+  dependency('gtk4', version: '>= 4.2.0'),
+  dependency('gee-0.8'),
+  dependency('libadwaita-1'),
+]
+
 c_args = [
   '-include', 'config.h',
   '-DLOCALEDIR="@0@"'.format(locale_dir),
 ]
 
+dragonjournal_sources += gnome.compile_resources('dungeonjournal-resources',
+    'dungeonjournal.gresource.xml',
+    c_name: 'dungeonjournal'
+)
+
 executable(
     meson.project_name(),
-    sources + resources,
+    dragonjournal_sources,
     include_directories: config_h_dir,
-    dependencies: deps,
+    dependencies: dragonjournal_deps,
     c_args: c_args,
     install: true,
 )

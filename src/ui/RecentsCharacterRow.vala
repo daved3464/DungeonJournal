@@ -2,7 +2,7 @@ using Gtk;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/trytonvanmeer/DungeonJournal/ui/RecentsCharacterRow.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/RecentsCharacterRow.ui")]
     public class RecentsCharacterRow: ListBoxRow
     {
         [GtkChild] protected unowned Label name_label;

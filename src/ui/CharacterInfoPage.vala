@@ -3,7 +3,7 @@ using Gee;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/trytonvanmeer/DungeonJournal/ui/CharacterInfoPage.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/CharacterInfoPage.ui")]
     public class CharacterInfoPage : Box
     {
         [GtkChild] protected unowned ListBox info_listbox;
@@ -143,17 +143,15 @@ namespace DungeonJournal
         }
 
         private void add_feat_row(ref CharacterFeat feat, bool collapse = false)
-        {
-            var pos = (int) this.feats_list.get_n_items() - 1;
+        {            
             var row = new CharacterFeatRow(ref feat);
-
+            
             if (collapse)
             {
                 row.collapse_row();
             }
 
-            this.feats_listbox.insert(row, pos);
-            this.feats_listbox.insert(new SeparatorRow(), pos + 1);
+            this.feats_listbox.append(row);
         }
 
         [GtkCallback]

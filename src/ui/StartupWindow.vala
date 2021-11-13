@@ -3,12 +3,11 @@ using Gtk;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/trytonvanmeer/DungeonJournal/ui/StartupWindow.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/StartupWindow.ui")]
     public class StartupWindow : Adw.Window
     {
         private DungeonJournal.ApplicationWindow window;
-
-        [GtkChild] private unowned Image logo;
+        
         [GtkChild] private unowned Box recents_box;
         [GtkChild] private unowned ListBox recents_listbox;
 
@@ -18,8 +17,7 @@ namespace DungeonJournal
         {
             Object();
             this.window = window;
-
-            this.logo.icon_name = Config.APP_ID;
+            
             this.setup_recents();
             
         }

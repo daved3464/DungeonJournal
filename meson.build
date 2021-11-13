@@ -6,34 +6,7 @@ project('dungeonjournal', ['c', 'vala'],
 gnome = import('gnome')
 i18n = import('i18n')
 
-# Add custom VAPI dir
-add_project_arguments(
-  ['--vapidir', meson.source_root() / 'vapi'],
-  language: 'vala'
-)
-
-# Application ID
-if get_option('profile') == 'development'
-  app_id = 'io.github.trytonvanmeer.DungeonJournal.Devel'
-else
-  app_id = 'io.github.trytonvanmeer.DungeonJournal'
-endif
-
-
-# Dependencies
-add_project_arguments(
-  '--target-glib=2.70',
-  language: 'vala'
-)
-
-math = meson.get_compiler('c').find_library('m')
-
-gio = dependency('gio-2.0')
-glib = dependency('glib-2.0')
-glib_json = dependency('json-glib-1.0')
-gtk = dependency('gtk4')
-gee = dependency('gee-0.8')
-
+# Check for libadwaita dependency
 libadwaita_dep = dependency('libadwaita-1', version: '>= 1.0.0', required: false)
 
 if not libadwaita_dep.found()
@@ -42,12 +15,32 @@ libadwaita = subproject(
   install: false,
   default_options: [
     'examples=false',
-    'package_subdir=my-project-name',
+    'package_subdir=io.github.daved3464.DungeonJournal',
     'tests=false',
   ]
 )
 libadwaita_dep = libadwaita.get_variable('libadwaita_dep')
 endif
+
+# Add custom VAPI dir
+add_project_arguments(
+  ['--vapidir', meson.source_root() / 'vapi'],
+  language: 'vala'
+)
+
+# Application ID
+if get_option('profile') == 'development'
+  app_id = 'io.github.daved3464.DungeonJournal.Devel'
+else
+  app_id = 'io.github.daved3464.DungeonJournal'
+endif
+
+
+add_project_arguments(
+  '--target-glib=2.70',
+  language: 'vala'
+)
+
 
 # Configuration
 config_h_dir = include_directories('.')

@@ -2,7 +2,7 @@ using Gtk;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/trytonvanmeer/DungeonJournal/ui/SpinButtonCheckboxRow.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/SpinButtonCheckboxRow.ui")]
     public class SpinButtonCheckboxRow: Gtk.ListBoxRow
     {
         [GtkChild] protected unowned Label label;
