@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <interface>
   <requires lib="gtk" version="4.0" />
   <requires lib="libadwaita" version="1.0" />
@@ -8,7 +7,8 @@
     <property name="default_height">576</property>
     <property name="content">
       <object class="GtkBox">
-        <property name="hexpand">True</property>
+
+        <property name="hexpand">1</property>
         <property name="orientation">vertical</property>
         <child>
           <object class="AdwHeaderBar">
@@ -23,24 +23,22 @@
             </child>
           </object>
         </child>
-
         <child>
           <object class="AdwStatusPage">
-            <property name="icon-name">dungeonjournal</property>
+            <property name="icon-name">io.github.daved3464.DungeonJournal</property>
             <property name="title" translatable="yes">_Create some characters</property>
-            <!-- Data Container -->
             <property name="child">
               <object class="AdwClamp">
                 <property name="maximum-size" bind-source="clamp_maximum_size_adjustment" bind-property="value" bind-flags="sync-create" />
                 <property name="tightening-threshold" bind-source="clamp_tightening_threshold_adjustment" bind-property="value" bind-flags="sync-create" />
                 <property name="child">
                   <object class="GtkBox">
+
                     <property name="orientation">vertical</property>
                     <property name="spacing">12</property>
-
-                    <!-- Open Character Button -->
                     <child>
                       <object class="GtkButton" id="open_button">
+
                         <property name="halign">center</property>
                         <signal name="clicked" handler="on_open" />
                         <property name="child">
@@ -53,12 +51,10 @@
                           <class name="suggested-action" />
                         </style>
                       </object>
-
                     </child>
-
-                    <!-- New Character Button -->
                     <child>
                       <object class="GtkButton" id="new_button">
+
                         <property name="halign">center</property>
                         <signal name="clicked" handler="on_new" />
                         <property name="child">
@@ -69,69 +65,53 @@
                         </property>
                       </object>
                     </child>
-
-                    <!-- Recent Characters -->
                     <child>
                       <object class="GtkBox" id="recents_box">
+
                         <property name="orientation">vertical</property>
                         <property name="spacing">12</property>
-
-                        <!-- Recent Characters Title -->
                         <child>
                           <object class="GtkLabel">
+
                             <property name="label" translatable="yes">_Recent Characters</property>
                             <attributes>
-                              <attribute name="weight" value="bold" />
+                              <attribute name="weight" value="bold"></attribute>
                             </attributes>
                           </object>
-
                         </child>
-
-                        <!-- Recent Characters List -->
                         <child>
                           <object class="GtkFrame">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="label_xalign">0</property>
 
-                            <child>
+                            <property name="child">
                               <object class="GtkListBox" id="recents_listbox">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
+
                                 <property name="selection_mode">none</property>
                                 <signal name="row-activated" handler="on_recents_row_clicked" />
                                 <signal name="row-selected" handler="on_recents_row_delete" />
                               </object>
-                            </child>
+                            </property>
                           </object>
-
-                        </child>                        
+                        </child>
                       </object>
                     </child>
-
                   </object>
                 </property>
               </object>
             </property>
           </object>
         </child>
-
-
       </object>
     </property>
-
-
   </template>
 
   <object class="GtkAdjustment" id="clamp_maximum_size_adjustment">
-    <property name="lower">0</property>
     <property name="upper">10000</property>
     <property name="value">600</property>
     <property name="page-increment">100</property>
     <property name="step-increment">10</property>
   </object>
+
   <object class="GtkAdjustment" id="clamp_tightening_threshold_adjustment">
-    <property name="lower">0</property>
     <property name="upper">10000</property>
     <property name="value">500</property>
     <property name="page-increment">100</property>

@@ -1,35 +1,29 @@
 using Adw;
 
-namespace DungeonJournal
-{
-    public class App : Adw.Application
-    {
+namespace DungeonJournal {
+    public class App : Adw.Application {
         public static DungeonJournal.Settings settings;
         public DungeonJournal.ApplicationWindow window;
 
-        public App()
-        {
+        public App() {
             Object(
                 application_id: Config.APP_ID,
-                flags: ApplicationFlags.FLAGS_NONE
+                flags : ApplicationFlags.FLAGS_NONE
             );
 
             settings = new DungeonJournal.Settings();
         }
 
-        protected override void startup()
-        {
+        protected override void startup() {
             base.startup();
             setup_actions();
         }
 
-        protected override void activate()
-        {
+        protected override void activate() {
             this.window = new DungeonJournal.ApplicationWindow(this);
         }
 
-        private void setup_actions()
-        {
+        private void setup_actions() {
             var about_action = new GLib.SimpleAction("about", null);
             about_action.activate.connect(() =>
             {
@@ -37,9 +31,9 @@ namespace DungeonJournal
             });
 
             var open_action = new GLib.SimpleAction("open", null);
-            open_action.activate.connect(()=>
+            open_action.activate.connect(() =>
             {
-                this.window.on_open();
+                this.window.on_open(this.window);
             });
 
             var save_action = new GLib.SimpleAction("save", null);
@@ -60,23 +54,21 @@ namespace DungeonJournal
             this.add_action(save_as_action);
 
             // Setup Accelerators
-            set_accels_for_action("app.open", {"<Primary>o"});
-            set_accels_for_action("app.save", {"<Primary>s"});
-            set_accels_for_action("app.save_as", {"<Primary><Shift>S"});
+            set_accels_for_action("app.open", { "<Primary>o" });
+            set_accels_for_action("app.save", { "<Primary>s" });
+            set_accels_for_action("app.save_as", { "<Primary><Shift>S" });
         }
 
-        private void show_about_dialog()
-        {
+        private void show_about_dialog() {
             string[] authors =
             {
-                "Tryton Van Meer <daved3464@gmail.com>",
+                "Tryton Van Meer <trytonvanmeer@gmail.com>",
                 "David Chamorro <daved3464@gmail.com>"
             };
 
             var version = Config.VERSION;
 
-            if (Config.PROFILE == "development")
-            {
+            if (Config.PROFILE == "development") {
                 version = "master";
             }
 
@@ -86,7 +78,9 @@ namespace DungeonJournal
                 logo_icon_name: Config.APP_ID,
                 program_name: "Dungeon Journal",
                 comments: _("Create Characters"),
-                copyright: "© 2019 Tryton Van Meer",
+                copyright:
+                "2021 David Chamorro\n
+                © 2019 Tryton Van Meer",
                 authors: authors,
                 website: "https://github.com/daved3464/DungeonJournal",
                 website_label: _("GitHub Homepage"),
@@ -96,8 +90,7 @@ namespace DungeonJournal
         }
     }
 
-    public static int main(string[] args)
-    {
+    public static int main(string[] args) {
         // Setup gettext
         Intl.bindtextdomain(Config.GETTEXT_PACKAGE, Config.LOCALEDIR);
         Intl.setlocale(LocaleCategory.ALL, "");

@@ -1,15 +1,12 @@
-namespace DungeonJournal
-{
-    public class Settings
-    {
+namespace DungeonJournal {
+    public class Settings {
         private GLib.Settings settings;
 
         private int _window_width;
         private int _window_height;
         private string[] _recent_files;
 
-        public Settings()
-        {
+        public Settings() {
             this.settings = new GLib.Settings("io.github.daved3464.DungeonJournal");
 
             this._window_width = this.settings.get_int("window-width");
@@ -19,12 +16,10 @@ namespace DungeonJournal
 
         public int window_width
         {
-            get
-            {
+            get {
                 return this._window_width;
             }
-            set
-            {
+            set {
                 this._window_width = value;
                 this.settings.set_int("window-width", value);
             }
@@ -32,12 +27,10 @@ namespace DungeonJournal
 
         public int window_height
         {
-            get
-            {
+            get {
                 return this._window_height;
             }
-            set
-            {
+            set {
                 this._window_height = value;
                 this.settings.set_int("window-height", value);
             }
@@ -45,19 +38,16 @@ namespace DungeonJournal
 
         public string[] recent_files
         {
-            get
-            {
+            get {
                 return this._recent_files;
             }
-            set
-            {
+            set {
                 this._recent_files = value;
                 this.settings.set_strv("recent-files", value);
             }
         }
 
-        public void apply()
-        {
+        public void apply() {
             this.settings.apply();
         }
     }

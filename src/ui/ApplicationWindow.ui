@@ -1,119 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <interface>
-  <requires lib="gtk" version="4.0"/>
-  <requires lib="libadwaita" version="1.0"/>
-  
-  <!-- <object class="GtkPopover" id="appmenu">
-    <property name="can-focus">False</property>
-    <child>
-      <object class="GtkBox" id="appmenu-box">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="margin-start">6</property>
-        <property name="margin-end">6</property>
-        <property name="margin-top">6</property>
-        <property name="margin-bottom">6</property>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="libadwaita" version="1.0" />
+  <template class="DungeonJournalApplicationWindow" parent="AdwApplicationWindow">
+    <property name="default-width">720</property>
+    <property name="default-height">640</property>
+    <property name="icon-name">io.github.daved3464.DungeonJournal</property>
+    <property name="content">
+      <object class="GtkBox">
+        <property name="vexpand">1</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkModelButton" id="open">
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="receives-default">True</property>
-            <property name="action-name">app.open</property>
-            <property name="text" translatable="yes">_Open...</property>
+          <object class="AdwHeaderBar">
+            <property name="centering-policy">strict</property>
+            <property name="title-widget">
+              <object class="AdwViewSwitcherTitle" id="switcher_title">
+                <property name="stack">stack</property>
+              </object>
+            </property>
           </object>
-          
         </child>
         <child>
-          <object class="GtkModelButton" id="save">
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="receives-default">True</property>
-            <property name="action-name">app.save</property>
-            <property name="text" translatable="yes">_Save...</property>
+          <object class="AdwViewStack" id="stack">
+            <property name="vexpand">True</property>
+            <child>
+              <object class="AdwViewStackPage" id="stack_page_info">
+                <property name="name">info</property>
+                <property name="title" translatable="yes">_Info</property>
+                <property name="icon-name">documentinfo</property>
+                <property name="child">
+                  <object class="GtkBox" id="page_info" />
+                </property>
+              </object>
+            </child>
           </object>
-          
         </child>
         <child>
-          <object class="GtkModelButton" id="save-as">
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="receives-default">True</property>
-            <property name="action-name">app.save-as</property>
-            <property name="text" translatable="yes">_Save As...</property>
+          <object class="AdwViewSwitcherBar" id="switcher_bar">
+            <property name="stack">stack</property>
+            <property name="reveal" bind-source="switcher_title" bind-property="title-visible" bind-flags="sync-create" />
           </object>
-          
-        </child>
-        <child>
-          <object class="GtkSeparator">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-          </object>
-          
-        </child>
-        <child>
-          <object class="GtkModelButton" id="shortcuts">
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="receives-default">True</property>
-            <property name="action-name">win.show-help-overlay</property>
-            <property name="text" translatable="yes">_Keyboard Shortcuts</property>
-          </object>
-
-        </child>
-        <child>
-          <object class="GtkModelButton" id="about">
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="receives-default">True</property>
-            <property name="action-name">app.about</property>
-            <property name="text" translatable="yes" comments="&quot;Footnote&quot; is the application name">_About Dungeon Journal</property>
-          </object>
-          
         </child>
       </object>
-    </child>
-  </object> -->
-
-  <template class="DungeonJournalApplicationWindow" parent="AdwApplicationWindow">    
-    <property name="default-width">1000</property>
-    <property name="default-height">720</property>
-    <property name="icon-name">io.github.daved3464.DungeonJournal</property>
-    <property name="content">      
-
-
-      <object class="AdwLeaflet" id="leaflet">          
-        
-        <child>
-          <object class="GtkBox">
-            <property name="orientation">vertical</property>
-            <property name="width-request">240</property>
-            <property name="hexpand">False</property>
-
-            <child>
-              <object class="AdwHeaderBar">
-                <binding name="show-end-title-buttons">
-                  <lookup name="folded">leaflet</lookup>
-                </binding>
-
-                <property name="title-widget">
-                  <object class="AdwWindowTitle"/>
-                </property>
-
-                <child type="start">
-                  <object class="GtkToggleButton" id="search_button">
-                    <property name="icon-name">edit-find-symbolic</property>
-                  </object>
-                </child>
-              </object>
-            </child>      
-          </object>
-        </child>
-
-      </object>      
-
-
-    </property>    
+    </property>
   </template>
 </interface>

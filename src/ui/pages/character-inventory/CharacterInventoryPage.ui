@@ -1,101 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <interface>
-  <requires lib="gtk" version="4.0"/>
-  <requires lib="libadwaita" version="1.0"/>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="libadwaita" version="1.0" />
   <template class="DungeonJournalCharacterInventoryPage" parent="GtkBox">
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
     <property name="orientation">vertical</property>
     <property name="spacing">12</property>
     <child>
       <object class="GtkScrolledWindow">
-        <property name="visible">True</property>
-        <property name="can-focus">True</property>
+
+
         <property name="vexpand">True</property>
         <property name="hscrollbar_policy">external</property>
         <child>
           <object class="GtkViewport">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-            
+
+
             <child>
               <object class="GtkBox">
                 <property name="orientation">vertical</property>
-                <property name="can-focus">False</property>
+
                 <property name="margin-start">12</property>
                 <property name="margin-end">12</property>
                 <property name="margin-top">32</property>
                 <property name="margin-bottom">32</property>
                 <child>
                   <object class="GtkBox">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+
+
                     <property name="orientation">vertical</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">_Currency</property>
                         <attributes>
-                          <attribute name="weight" value="bold"/>
+                          <attribute name="weight" value="bold" />
                         </attributes>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkFrame">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="label_xalign">0</property>
-                        
+
                         <child>
                           <object class="GtkListBox" id="currency_listbox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
+
+
                             <property name="selection_mode">none</property>
                           </object>
                         </child>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="halign">start</property>
                         <property name="margin-top">18</property>
                         <property name="label" translatable="yes">_Attacks</property>
                         <attributes>
-                          <attribute name="weight" value="bold"/>
+                          <attribute name="weight" value="bold" />
                         </attributes>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkFrame">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="label_xalign">0</property>
-                        
+
                         <child>
                           <object class="GtkListBox" id="attacks_listbox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
+
+
                             <property name="selection_mode">none</property>
-                            <signal name="row-activated" handler="on_attacks_row_clicked" swapped="no"/>
+                            <signal name="row-activated" handler="on_attacks_row_clicked" swapped="no" />
                             <child>
                               <object class="GtkListBoxRow" id="attacks_row_button">
                                 <property name="width_request">100</property>
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
+
+
                                 <property name="selectable">False</property>
                                 <child>
                                   <object class="GtkImage">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
+
+
                                     <property name="margin-top">12</property>
                                     <property name="margin-bottom">12</property>
                                     <property name="icon-name">list-add-symbolic</property>
@@ -106,43 +103,43 @@
                           </object>
                         </child>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="halign">start</property>
                         <property name="margin-top">18</property>
                         <property name="label" translatable="yes">_Items</property>
                         <attributes>
-                          <attribute name="weight" value="bold"/>
+                          <attribute name="weight" value="bold" />
                         </attributes>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkFrame">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="label_xalign">0</property>
-                        
+
                         <child>
                           <object class="GtkListBox" id="items_listbox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
+
+
                             <property name="selection_mode">none</property>
-                            <signal name="row-activated" handler="on_items_row_clicked" swapped="no"/>
+                            <signal name="row-activated" handler="on_items_row_clicked" swapped="no" />
                             <child>
                               <object class="GtkListBoxRow" id="items_row_button">
                                 <property name="width_request">100</property>
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
+
+
                                 <property name="selectable">False</property>
                                 <child>
                                   <object class="GtkImage">
-                                    <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
+
+
                                     <property name="margin-top">12</property>
                                     <property name="margin-bottom">12</property>
                                     <property name="icon-name">list-add-symbolic</property>
@@ -153,7 +150,7 @@
                           </object>
                         </child>
                       </object>
-                      
+
                     </child>
                   </object>
                 </child>
@@ -162,7 +159,7 @@
           </object>
         </child>
       </object>
-      
+
     </child>
   </template>
 </interface>

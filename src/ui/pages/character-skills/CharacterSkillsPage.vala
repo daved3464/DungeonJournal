@@ -1,11 +1,9 @@
 using Gtk;
 using Gee;
 
-namespace DungeonJournal
-{
-    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/CharacterSkillsPage.ui")]
-    public class CharacterSkillsPage : Box
-    {
+namespace DungeonJournal {
+    [GtkTemplate(ui = "/io/github/daved3464/DungeonJournal/ui/pages/character-skills/CharacterSkillsPage.ui")]
+    public class CharacterSkillsPage : Box {
         [GtkChild] protected unowned ListBox strength_listbox;
         [GtkChild] protected unowned ListBox dexterity_listbox;
         [GtkChild] protected unowned ListBox constitution_listbox;
@@ -34,8 +32,7 @@ namespace DungeonJournal
         protected HashMap<Ability, ListBox> abilities;
         protected ArrayList<ListBoxRow> skills;
 
-        public CharacterSkillsPage()
-        {
+        public CharacterSkillsPage() {
             Object();
 
             this.abilities = new HashMap<Ability, ListBox>();
@@ -52,14 +49,12 @@ namespace DungeonJournal
             this.setup_view();
         }
 
-        private void setup_view()
-        {
+        private void setup_view() {
             this.setup_view_abilities();
             this.setup_view_skills();
         }
 
-        private void setup_view_abilities()
-        {
+        private void setup_view_abilities() {
             this.strength_score = new SpinButtonRow.with_ability_score_label();
             this.strength_save = new SpinButtonCheckboxRow(_("Saving Throws"));
 
@@ -108,8 +103,7 @@ namespace DungeonJournal
             this.charisma_listbox.append(new SeparatorRow());
         }
 
-        private void setup_view_skills()
-        {
+        private void setup_view_skills() {
             // strength
             this.add_skill_row(Ability.STRENGTH, "athletics", _("Athletics"), false);
 
@@ -139,22 +133,19 @@ namespace DungeonJournal
             this.add_skill_row(Ability.CHARISMA, "persuasion", _("Persuasion"), false);
         }
 
-        private void add_skill_row(Ability ability, string skill, string label, bool separator=true)
-        {
+        private void add_skill_row(Ability ability, string skill, string label, bool separator = true) {
             var skill_row = new SpinButtonCheckboxRow(label);
             skill_row.set_name(skill);
 
             this.abilities.get(ability).append(skill_row);
             this.skills.add(skill_row);
 
-            if (separator)
-            {
+            if (separator) {
                 this.abilities.get(ability).append(new SeparatorRow());
             }
         }
 
-        public void bind_character(CharacterSheet character)
-        {
+        public void bind_character(CharacterSheet character) {
             character.bind("strength_score", this.strength_score, "value");
             character.bind("strength_save_proficiency", this.strength_save, "active");
             character.bind("strength_save", this.strength_save, "value");
@@ -179,8 +170,7 @@ namespace DungeonJournal
             character.bind("charisma_save_proficiency", this.charisma_save, "active");
             character.bind("charisma_save", this.charisma_save, "value");
 
-            foreach (ListBoxRow row in this.skills)
-            {
+            foreach (ListBoxRow row in this.skills) {
                 var name = row.get_name();
 
                 character.bind(@"$(name)_skill_proficiency", row, "active");

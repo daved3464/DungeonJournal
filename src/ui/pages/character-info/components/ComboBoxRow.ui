@@ -2,21 +2,16 @@
 
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <object class="GtkAdjustment" id="adjustment">
-    <property name="upper">1000000</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-  </object>
-  <template class="DungeonJournalSpinButtonRow" parent="GtkListBoxRow">
+  <template class="DungeonJournalComboBoxRow" parent="GtkListBoxRow">
     <property name="width_request">100</property>
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
+    
+    
     <property name="activatable">False</property>
     <property name="selectable">False</property>
     <child>
       <object class="GtkBox">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
+        
+        
         <property name="margin-start">12</property>
         <property name="margin-end">12</property>
         <property name="margin-top">12</property>
@@ -24,17 +19,16 @@
         <property name="homogeneous">True</property>
         <child>
           <object class="GtkLabel" id="label">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
+            
+            
             <property name="halign">start</property>
           </object>
           
         </child>
         <child>
-          <object class="GtkSpinButton" id="spinbutton">
-            <property name="visible">True</property>
-            <property name="can-focus">True</property>
-            <property name="adjustment">adjustment</property>
+          <object class="GtkComboBoxText" id="combo">
+            
+            
           </object>
           
         </child>

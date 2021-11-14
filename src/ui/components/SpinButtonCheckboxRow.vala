@@ -2,7 +2,7 @@ using Gtk;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/SpinButtonCheckboxRow.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/components/SpinButtonCheckboxRow.ui")]
     public class SpinButtonCheckboxRow: Gtk.ListBoxRow
     {
         [GtkChild] protected unowned Label label;
@@ -33,7 +33,7 @@ namespace DungeonJournal
         }
 
         private void connect_signals()
-        {            
+        {
 
             this.adjustment.value_changed.connect(() => {
                 this.notify_property("value");

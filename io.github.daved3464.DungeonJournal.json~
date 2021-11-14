@@ -28,6 +28,7 @@
         "*.a"
     ],
     "modules" : [
+
         {
             "name" : "dungeonjournal",
             "builddir" : true,

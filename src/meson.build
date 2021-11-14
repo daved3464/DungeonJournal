@@ -1,27 +1,40 @@
 dragonjournal_sources = [
+  ## Main App
   'Application.vala',
   'Util.vala',
   'Settings.vala',
-  'CharacterSheet.vala',
-  'CharacterFeat.vala',
-  'CharacterAttack.vala',
-  'CharacterItem.vala',
+
+  ## Data Models
+  'models/CharacterSheet.vala',
+  'models/CharacterFeat.vala',
+  'models/CharacterAttack.vala',
+  'models/CharacterItem.vala',
+
+  ## Main Window
   'ui/ApplicationWindow.vala',
-  'ui/StartupWindow.vala',
-  'ui/ShortcutsWindow.vala',
-  'ui/CharacterInfoPage.vala',
-  'ui/CharacterSkillsPage.vala',
-  'ui/CharacterInventoryPage.vala',
-  'ui/EntryRow.vala',
-  'ui/ComboBoxRow.vala',
-  'ui/SpinButtonRow.vala',
-  'ui/SpinButtonCheckboxRow.vala',
-  'ui/SeparatorRow.vala',
-  'ui/RecentsCharacterRow.vala',
-  'ui/CharacterRowInterface.vala',
-  'ui/CharacterFeatRow.vala',
-  'ui/CharacterAttackRow.vala',
-  'ui/CharacterItemRow.vala',
+  'ui/StartupWindow.vala',  
+
+  ## Main Components 
+  'ui/components/CharacterRowInterface.vala',
+  'ui/components/RecentsCharacterRow.vala',
+  'ui/components/SeparatorRow.vala',
+  'ui/components/SpinButtonRow.vala',
+  'ui/components/SpinButtonCheckboxRow.vala',
+
+  ## Character Info Page
+  'ui/pages/character-info/CharacterInfoPage.vala',
+  'ui/pages/character-info/components/CharacterAttackRow.vala',
+  'ui/pages/character-info/components/CharacterFeatRow.vala',
+  'ui/pages/character-info/components/ComboBoxRow.vala',
+  'ui/pages/character-info/components/EntryRow.vala',
+
+  ## Character Inventory Page
+  'ui/pages/character-inventory/CharacterInventoryPage.vala',
+  'ui/pages/character-inventory/components/CharacterItemRow.vala',
+
+  ## Character Skills Page
+  'ui/pages/character-skills/CharacterSkillsPage.vala',
+  
 ]
 
 

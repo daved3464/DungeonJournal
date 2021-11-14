@@ -1,209 +1,208 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <interface>
-  <requires lib="gtk" version="4.0"/>
-  <requires lib="libadwaita" version="1.0"/>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="libadwaita" version="1.0" />
   <template class="DungeonJournalCharacterSkillsPage" parent="GtkBox">
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
+
+
     <property name="orientation">vertical</property>
     <property name="spacing">12</property>
     <child>
       <object class="GtkScrolledWindow">
-        <property name="visible">True</property>
-        <property name="can-focus">True</property>
+
+
         <property name="vexpand">True</property>
         <property name="hscrollbar_policy">never</property>
         <child>
           <object class="GtkViewport">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-            
+
+
             <child>
               <object class="GtkBox">
-                <property name="orientation">vertical</property>                
+                <property name="orientation">vertical</property>
                 <property name="margin-start">12</property>
                 <property name="margin-end">12</property>
                 <property name="margin-top">32</property>
                 <property name="margin-bottom">32</property>
                 <child>
                   <object class="GtkBox">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+
+
                     <property name="orientation">vertical</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="halign">start</property>
                         <property name="label" translatable="yes">_Strength</property>
                         <attributes>
-                          <attribute name="weight" value="bold"/>
+                          <attribute name="weight" value="bold" />
                         </attributes>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkFrame">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="label_xalign">0</property>
-                        
+
                         <child>
                           <object class="GtkListBox" id="strength_listbox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
+
+
                             <property name="selection_mode">none</property>
                           </object>
                         </child>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="halign">start</property>
                         <property name="margin-top">18</property>
                         <property name="label" translatable="yes">_Dexterity</property>
                         <attributes>
-                          <attribute name="weight" value="bold"/>
+                          <attribute name="weight" value="bold" />
                         </attributes>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkFrame">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="label_xalign">0</property>
-                        
+
                         <child>
                           <object class="GtkListBox" id="dexterity_listbox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
+
+
                             <property name="selection_mode">none</property>
                           </object>
                         </child>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="halign">start</property>
                         <property name="margin-top">18</property>
                         <property name="label" translatable="yes">_Constitution</property>
                         <attributes>
-                          <attribute name="weight" value="bold"/>
+                          <attribute name="weight" value="bold" />
                         </attributes>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkFrame">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="label_xalign">0</property>
-                        
+
                         <child>
                           <object class="GtkListBox" id="constitution_listbox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
+
+
                             <property name="selection_mode">none</property>
                           </object>
                         </child>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="halign">start</property>
                         <property name="margin-top">18</property>
                         <property name="label" translatable="yes">_Intelligence</property>
                         <attributes>
-                          <attribute name="weight" value="bold"/>
+                          <attribute name="weight" value="bold" />
                         </attributes>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkFrame">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="label_xalign">0</property>
-                        
+
                         <child>
                           <object class="GtkListBox" id="intelligence_listbox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
+
+
                             <property name="selection_mode">none</property>
                           </object>
                         </child>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="halign">start</property>
                         <property name="margin-top">18</property>
                         <property name="label" translatable="yes">_Wisdom</property>
                         <attributes>
-                          <attribute name="weight" value="bold"/>
+                          <attribute name="weight" value="bold" />
                         </attributes>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkFrame">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="label_xalign">0</property>
-                        
+
                         <child>
                           <object class="GtkListBox" id="wisdom_listbox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
+
+
                             <property name="selection_mode">none</property>
                           </object>
                         </child>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="halign">start</property>
                         <property name="margin-top">18</property>
                         <property name="label" translatable="yes">_Charisma</property>
                         <attributes>
-                          <attribute name="weight" value="bold"/>
+                          <attribute name="weight" value="bold" />
                         </attributes>
                       </object>
-                      
+
                     </child>
                     <child>
                       <object class="GtkFrame">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+
+
                         <property name="label_xalign">0</property>
-                        
+
                         <child>
                           <object class="GtkListBox" id="charisma_listbox">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
+
+
                             <property name="selection_mode">none</property>
                           </object>
                         </child>
                       </object>
-                      
+
                     </child>
                   </object>
                 </child>
@@ -212,7 +211,7 @@
           </object>
         </child>
       </object>
-      
+
     </child>
   </template>
 </interface>

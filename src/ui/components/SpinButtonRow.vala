@@ -3,7 +3,7 @@ using Adw;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/SpinButtonRow.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/components/SpinButtonRow.ui")]
     public class SpinButtonRow: ListBoxRow
     {
         [GtkChild] protected unowned Label label;
@@ -37,7 +37,7 @@ namespace DungeonJournal
         }
 
         private void connect_signals()
-        {            
+        {
             this.adjustment.value_changed.connect(() => {
                 this.notify_property("value");
             });

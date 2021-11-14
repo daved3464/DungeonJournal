@@ -2,7 +2,7 @@ using Gtk;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/ComboBoxRow.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/pages/character-info/components/ComboBoxRow.ui")]
     public class ComboBoxRow: ListBoxRow
     {
         [GtkChild] protected unowned Label label;

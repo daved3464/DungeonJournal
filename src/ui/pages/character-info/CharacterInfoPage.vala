@@ -1,16 +1,13 @@
 using Gtk;
 using Gee;
 
-namespace DungeonJournal
-{
-    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/CharacterInfoPage.ui")]
-    public class CharacterInfoPage : Box
-    {
+namespace DungeonJournal {
+    [GtkTemplate(ui = "/io/github/daved3464/DungeonJournal/ui/pages/character-info/CharacterInfoPage.ui")]
+    public class CharacterInfoPage : Box {
         [GtkChild] protected unowned ListBox info_listbox;
         [GtkChild] protected unowned ListBox stats_listbox;
         [GtkChild] protected unowned ListBox feats_listbox;
         [GtkChild] protected unowned ListBoxRow feats_row_button;
-        public SortListModel feats_list;
         // Info
         protected EntryRow info_name;
         protected EntryRow info_class;
@@ -32,8 +29,7 @@ namespace DungeonJournal
         // Feats
         protected ArrayList<CharacterFeat> feats { get; set; }
 
-        public CharacterInfoPage()
-        {
+        public CharacterInfoPage() {
             Object();
 
             this.setup_info();
@@ -41,8 +37,7 @@ namespace DungeonJournal
             this.setup_feats();
         }
 
-        private void setup_info()
-        {
+        private void setup_info() {
             this.info_name = new EntryRow(_("Character Name"));
             this.info_class = new EntryRow(_("Class"));
             this.info_race = new EntryRow(_("Race"));
@@ -74,8 +69,7 @@ namespace DungeonJournal
             this.info_listbox.append(this.info_xp);
         }
 
-        public void setup_stats()
-        {
+        public void setup_stats() {
             this.stats_proficiency_bonus = new SpinButtonRow(_("Proficiency Bonus"));
             this.stats_armor_class = new SpinButtonRow(_("Armor Class"));
             this.stats_initiative = new SpinButtonRow(_("Initiative"));
@@ -102,14 +96,11 @@ namespace DungeonJournal
             this.stats_listbox.append(this.stats_hit_dice);
         }
 
-        private void setup_feats()
-        {
+        private void setup_feats() {
             this.feats = new ArrayList<CharacterFeat>();
-            this.feats_listbox.bind_model(this.feats_list, null);
         }
 
-        public void bind_character(CharacterSheet character)
-        {
+        public void bind_character(CharacterSheet character) {
             // Info
             character.bind("name", this.info_name, "text");
             character.bind("class", this.info_class, "text");
@@ -131,23 +122,15 @@ namespace DungeonJournal
             // Feats
             character.bind("feats", this, "feats");
 
-            // Clear feats_listbox
-            for (var i = 0; i < this.feats_list.get_n_items(); i++){
-                this.feats_list.set_model(null);
-            }
-
-            foreach (var feat in this.feats)
-            {
+            foreach (var feat in this.feats) {
                 this.add_feat_row(ref feat, true);
             }
         }
 
-        private void add_feat_row(ref CharacterFeat feat, bool collapse = false)
-        {            
+        private void add_feat_row(ref CharacterFeat feat, bool collapse = false) {
             var row = new CharacterFeatRow(ref feat);
-            
-            if (collapse)
-            {
+
+            if (collapse) {
                 row.collapse_row();
             }
 
@@ -155,18 +138,13 @@ namespace DungeonJournal
         }
 
         [GtkCallback]
-        public void on_feats_row_clicked(ListBoxRow row)
-        {
-            if (row == this.feats_row_button)
-            {
+        public void on_feats_row_clicked(ListBoxRow row) {
+            if (row == this.feats_row_button) {
                 var feat = new CharacterFeat();
                 this.feats.add(feat);
 
                 this.add_feat_row(ref feat);
-            }
-
-            else if (row.get_type() == typeof(CharacterFeatRow))
-            {
+            } else if (row.get_type() == typeof (CharacterFeatRow)) {
                 // Delete Feat
                 var feat_row = (CharacterFeatRow) row;
                 this.feats.remove(feat_row.feat);

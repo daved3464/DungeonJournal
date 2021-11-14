@@ -2,7 +2,7 @@ using Gtk;
 
 namespace DungeonJournal
 {
-    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/CharacterItemRow.ui")]
+    [GtkTemplate (ui = "/io/github/daved3464/DungeonJournal/ui/pages/character-inventory/components/CharacterItemRow.ui")]
     public class CharacterItemRow : ListBoxRow, CharacterRowInterface
     {
         [GtkChild] protected unowned Label name_label;
@@ -24,7 +24,7 @@ namespace DungeonJournal
 
         public CharacterItemRow(ref CharacterItem item)
         {
-            Object();            
+            Object();
 
             this.item = item;
 
@@ -57,6 +57,6 @@ namespace DungeonJournal
             this.delete_button_clicked();
         }
 
-        
+
     }
 }

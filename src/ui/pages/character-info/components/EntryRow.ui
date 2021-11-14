@@ -2,16 +2,16 @@
 
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <template class="DungeonJournalComboBoxRow" parent="GtkListBoxRow">
+  <template class="DungeonJournalEntryRow" parent="GtkListBoxRow">
     <property name="width_request">100</property>
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
+    
+    
     <property name="activatable">False</property>
     <property name="selectable">False</property>
     <child>
       <object class="GtkBox">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
+        
+        
         <property name="margin-start">12</property>
         <property name="margin-end">12</property>
         <property name="margin-top">12</property>
@@ -19,16 +19,16 @@
         <property name="homogeneous">True</property>
         <child>
           <object class="GtkLabel" id="label">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
+            
+            
             <property name="halign">start</property>
           </object>
           
         </child>
         <child>
-          <object class="GtkComboBoxText" id="combo">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
+          <object class="GtkEntry" id="entry">
+            
+            
           </object>
           
         </child>

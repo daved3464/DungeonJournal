@@ -17,6 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.08.3\n"
 
+msgid "_Open"
+msgstr "Open"
+
+msgid "_Close"
+msgstr "Close"
+
 #: data/ui/CharacterAttackRow.ui:123
 msgid "_Weapon"
 msgstr "Weapon"

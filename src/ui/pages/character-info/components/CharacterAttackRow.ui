@@ -3,25 +3,25 @@
 <interface>
   <requires lib="gtk" version="4.0"/>
   <object class="GtkImage" id="delete_image">
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
+    
+    
     <property name="icon-name">edit-delete-symbolic</property>
   </object>
   <object class="GtkImage" id="expand_image">
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
+    
+    
     <property name="icon-name">pan-down-symbolic</property>
   </object>
   <template class="DungeonJournalCharacterAttackRow" parent="GtkListBoxRow">
     <property name="width_request">100</property>
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
+    
+    
     <property name="activatable">False</property>
     <property name="selectable">False</property>
     <child>
       <object class="GtkBox">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
+        
+        
         <property name="margin-start">12</property>
         <property name="margin-end">12</property>
         <property name="margin-top">12</property>
@@ -30,13 +30,13 @@
         <property name="spacing">6</property>
         <child>
           <object class="GtkBox">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
+            
+            
             <property name="spacing">6</property>
             <child>
               <object class="GtkLabel" id="name_label">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                
+                
                 <property name="ellipsize">end</property>
                 <attributes>
                   <attribute name="weight" value="bold"/>
@@ -45,8 +45,8 @@
             </child>
             <child>
               <object class="GtkSeparator">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                
+                
                 <property name="margin-start">6</property>
                 <property name="margin-end">6</property>
                 <property name="orientation">vertical</property>
@@ -55,14 +55,14 @@
             </child>
             <child>
               <object class="GtkLabel" id="atkbonus_label">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                
+                
               </object>              
             </child>
             <child>
               <object class="GtkButton" id="delete_button">
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
+                
+                
                 <property name="receives_default">True</property>
                 <property name="image">delete_image</property>
                 <property name="relief">none</property>
@@ -75,8 +75,8 @@
             </child>
             <child>
               <object class="GtkButton" id="expand_button">
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
+                
+                
                 <property name="receives_default">True</property>
                 <property name="image">expand_image</property>
                 <property name="relief">none</property>
@@ -86,8 +86,8 @@
             </child>
             <child>
               <object class="GtkSeparator">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                
+                
                 <property name="margin-start">6</property>
                 <property name="margin-end">6</property>
                 <property name="orientation">vertical</property>
@@ -96,8 +96,8 @@
             </child>
             <child>
               <object class="GtkLabel" id="damage_label">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                
+                
               </object>
               
             </child>
@@ -106,19 +106,19 @@
         </child>
         <child>
           <object class="GtkBox" id="expand_box">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
+            
+            
             <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkBox">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                
+                
                 <property name="homogeneous">True</property>
                 <child>
                   <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    
+                    
                     <property name="halign">start</property>
                     <property name="label" translatable="yes">_Weapon</property>
                   </object>
@@ -126,8 +126,8 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="weapon_entry">
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    
+                    
                   </object>
                   
                 </child>
@@ -135,13 +135,13 @@
             </child>
             <child>
               <object class="GtkBox">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                
+                
                 <property name="homogeneous">True</property>
                 <child>
                   <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    
+                    
                     <property name="halign">start</property>
                     <property name="label" translatable="yes">_Range</property>
                   </object>
@@ -149,8 +149,8 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="range_entry">
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    
+                    
                   </object>
                   
                 </child>
@@ -159,13 +159,13 @@
             </child>
             <child>
               <object class="GtkBox">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                
+                
                 <property name="homogeneous">True</property>
                 <child>
                   <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    
+                    
                     <property name="halign">start</property>
                     <property name="label" translatable="yes">_Attack Bonus</property>
                   </object>
@@ -173,8 +173,8 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="atkbonus_entry">
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    
+                    
                   </object>
                   
                 </child>
@@ -182,13 +182,13 @@
             </child>
             <child>
               <object class="GtkBox">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
+                
+                
                 <property name="homogeneous">True</property>
                 <child>
                   <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
+                    
+                    
                     <property name="halign">start</property>
                     <property name="label" translatable="yes">_Damage/Type</property>
                   </object>
@@ -196,8 +196,8 @@
                 </child>
                 <child>
                   <object class="GtkEntry" id="damage_entry">
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
+                    
+                    
                   </object>
                   
                 </child>
