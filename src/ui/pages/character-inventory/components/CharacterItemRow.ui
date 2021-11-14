@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <interface>
-  <requires lib="gtk" version="4.0"/>
+  <requires lib="gtk" version="4.0" />
   <object class="GtkImage" id="delete_image">
-    
-    
+
+
     <property name="icon-name">edit-delete-symbolic</property>
   </object>
   <object class="GtkImage" id="expand_image">
-    
-    
+
+
     <property name="icon-name">pan-down-symbolic</property>
   </object>
   <object class="GtkAdjustment" id="quantity_adjustment">
@@ -24,14 +24,14 @@
   </object>
   <template class="DungeonJournalCharacterItemRow" parent="GtkListBoxRow">
     <property name="width_request">100</property>
-    
-    
+
+
     <property name="activatable">False</property>
     <property name="selectable">False</property>
     <child>
       <object class="GtkBox">
-        
-        
+
+
         <property name="margin-start">12</property>
         <property name="margin-end">12</property>
         <property name="margin-top">12</property>
@@ -40,187 +40,178 @@
         <property name="spacing">6</property>
         <child>
           <object class="GtkBox">
-            
-            
+
+
             <property name="spacing">6</property>
             <child>
               <object class="GtkLabel" id="name_label">
-                
-                
+
+
                 <property name="ellipsize">end</property>
                 <attributes>
-                  <attribute name="weight" value="bold"/>
+                  <attribute name="weight" value="bold" />
                 </attributes>
               </object>
-              
+
             </child>
             <child>
               <object class="GtkButton" id="delete_button">
-                
-                
+
+
                 <property name="receives_default">True</property>
-                <property name="image">delete_image</property>
-                <property name="relief">none</property>
-                <signal name="clicked" handler="on_delete_button_clicked" swapped="no"/>
+
+
+                <signal name="clicked" handler="on_delete_button_clicked" swapped="no" />
                 <style>
-                  <class name="destructive-action"/>
+                  <class name="destructive-action" />
                 </style>
               </object>
-              
+
             </child>
             <child>
-              <object class="GtkLabel" id="quantity_label">
-                
-                
-              </object>
-              
+              <object class="GtkLabel" id="quantity_label"></object>
+
             </child>
             <child>
               <object class="GtkButton" id="expand_button">
-                
-                
+
+
                 <property name="receives_default">True</property>
                 <property name="image">expand_image</property>
-                <property name="relief">none</property>
-                <signal name="clicked" handler="on_expand_button_clicked" swapped="no"/>
+
+                <signal name="clicked" handler="on_expand_button_clicked" swapped="no" />
               </object>
-              
+
             </child>
           </object>
-          
+
         </child>
         <child>
           <object class="GtkBox" id="expand_box">
-            
-            
+
+
             <property name="orientation">vertical</property>
             <property name="spacing">6</property>
             <child>
               <object class="GtkBox">
-                
-                
+
+
                 <property name="homogeneous">True</property>
                 <child>
                   <object class="GtkLabel">
-                    
-                    
+
+
                     <property name="halign">start</property>
                     <property name="label" translatable="yes">_Name</property>
                   </object>
-                  
+
                 </child>
                 <child>
-                  <object class="GtkEntry" id="name_entry">
-                    
-                    
-                  </object>
-                  
+                  <object class="GtkEntry" id="name_entry"></object>
+
                 </child>
               </object>
-              
+
             </child>
             <child>
               <object class="GtkBox">
-                
-                
+
+
                 <property name="homogeneous">True</property>
                 <child>
                   <object class="GtkLabel">
-                    
-                    
+
+
                     <property name="halign">start</property>
                     <property name="label" translatable="yes">_Quantity</property>
                   </object>
-                  
+
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="quantity_spinbutton">
-                    
-                    
+
+
                     <property name="text">0</property>
                     <property name="adjustment">quantity_adjustment</property>
                   </object>
-                  
+
                 </child>
               </object>
-              
+
             </child>
             <child>
               <object class="GtkBox">
-                
-                
+
+
                 <property name="homogeneous">True</property>
                 <child>
                   <object class="GtkLabel">
-                    
-                    
+
+
                     <property name="halign">start</property>
                     <property name="label" translatable="yes">_Cost</property>
                   </object>
-                  
+
                 </child>
                 <child>
-                  <object class="GtkEntry" id="cost_entry">
-                    
-                    
-                  </object>
-                  
+                  <object class="GtkEntry" id="cost_entry"></object>
+
                 </child>
               </object>
-              
+
             </child>
             <child>
               <object class="GtkBox">
-                
-                
+
+
                 <property name="homogeneous">True</property>
                 <child>
                   <object class="GtkLabel">
-                    
-                    
+
+
                     <property name="halign">start</property>
                     <property name="label" translatable="yes">_Weight</property>
                   </object>
-                  
+
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="weight_spinbutton">
-                    
-                    
+
+
                     <property name="text">0</property>
                     <property name="adjustment">weight_adjustment</property>
                   </object>
-                  
+
                 </child>
               </object>
-              
+
             </child>
             <child>
               <object class="GtkBox">
-                
-                
+
+
                 <property name="spacing">12</property>
                 <child>
                   <object class="GtkLabel">
-                    
-                    
+
+
                     <property name="halign">start</property>
                     <property name="valign">start</property>
                     <property name="label" translatable="yes">_Description</property>
                   </object>
-                  
+
                 </child>
                 <child>
                   <object class="GtkScrolledWindow">
                     <property name="height_request">120</property>
-                    
-                    
+
+
                     <property name="hscrollbar_policy">never</property>
-                    
+
                     <child>
                       <object class="GtkTextView" id="description_entry">
-                        
-                        
+
+
                         <property name="wrap_mode">word-char</property>
                         <property name="left_margin">6</property>
                         <property name="right_margin">6</property>
@@ -229,13 +220,13 @@
                       </object>
                     </child>
                   </object>
-                  
+
                 </child>
               </object>
-              
+
             </child>
           </object>
-          
+
         </child>
       </object>
     </child>

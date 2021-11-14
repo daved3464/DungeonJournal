@@ -6,6 +6,7 @@
     <property name="default-width">720</property>
     <property name="default-height">640</property>
     <property name="icon-name">io.github.daved3464.DungeonJournal</property>
+    <property name="title">Dungeon Journal</property>
     <property name="content">
       <object class="GtkBox">
         <property name="vexpand">1</property>
@@ -16,6 +17,7 @@
             <property name="title-widget">
               <object class="AdwViewSwitcherTitle" id="switcher_title">
                 <property name="stack">stack</property>
+                <property name="title" bind-source="DungeonJournalApplicationWindow" bind-property="title" bind-flags="sync-create" />
               </object>
             </property>
           </object>
@@ -24,12 +26,41 @@
           <object class="AdwViewStack" id="stack">
             <property name="vexpand">True</property>
             <child>
-              <object class="AdwViewStackPage" id="stack_page_info">
+              <object class="AdwViewStackPage">
                 <property name="name">info</property>
                 <property name="title" translatable="yes">_Info</property>
-                <property name="icon-name">documentinfo</property>
+                <property name="icon-name"></property>
                 <property name="child">
-                  <object class="GtkBox" id="page_info" />
+                  <object class="GtkBox" id="page_info">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">12</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="AdwViewStackPage">
+                <property name="name">inventory</property>
+                <property name="title" translatable="yes">_Inventory</property>
+                <property name="icon-name"></property>
+                <property name="child">
+                  <object class="GtkBox" id="page_inventory">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">12</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="AdwViewStackPage">
+                <property name="name">skills</property>
+                <property name="title" translatable="yes">_Skills</property>
+                <property name="icon-name"></property>
+                <property name="child">
+                  <object class="GtkBox" id="page_skills">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">12</property>
+                  </object>
                 </property>
               </object>
             </child>

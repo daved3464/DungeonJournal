@@ -2,7 +2,7 @@
 <interface>
   <requires lib="gtk" version="4.0" />
   <requires lib="libadwaita" version="1.0" />
-  <template class="DungeonJournalStartupWindow" parent="AdwWindow">
+  <template class="DungeonJournalStartupWindow" parent="AdwWindow">    
     <property name="default_width">800</property>
     <property name="default_height">576</property>
     <property name="content">
@@ -11,16 +11,12 @@
         <property name="hexpand">1</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="AdwHeaderBar">
+          <object class="AdwHeaderBar" id="headerbar">
             <property name="title-widget">
               <object class="AdwWindowTitle">
                 <property name="title">Dungeon Journal</property>
               </object>
             </property>
-            <signal name="destroy" handler="on_destroy" />
-            <child>
-              <placeholder />
-            </child>
           </object>
         </child>
         <child>
@@ -36,35 +32,50 @@
 
                     <property name="orientation">vertical</property>
                     <property name="spacing">12</property>
-                    <child>
-                      <object class="GtkButton" id="open_button">
 
-                        <property name="halign">center</property>
-                        <signal name="clicked" handler="on_open" />
-                        <property name="child">
-                          <object class="AdwButtonContent">
-                            <property name="icon-name">document-open-symbolic</property>
-                            <property name="label" translatable="yes">_Open Character</property>
+                    <child>
+                      <object class="GtkFlowBox">
+
+                        <child>
+                          <object class="GtkFlowBoxChild">
+                            <property name="child">
+                              <object class="GtkButton" id="open_button">
+                                <property name="halign">center</property>
+                                <signal name="clicked" handler="on_open" />
+                                <property name="child">
+                                  <object class="AdwButtonContent">
+                                    <property name="icon-name">document-open-symbolic</property>
+                                    <property name="label" translatable="yes">_Open Character</property>
+                                  </object>
+                                </property>
+                                <style>
+                                  <class name="suggested-action" />
+                                </style>
+                              </object>
+                            </property>
                           </object>
-                        </property>
-                        <style>
-                          <class name="suggested-action" />
-                        </style>
+                        </child>
+
+                        <child>
+                          <object class="GtkFlowBoxChild">
+                            <property name="child">
+                              <object class="GtkButton" id="new_button">
+                                <property name="halign">center</property>
+                                <signal name="clicked" handler="on_new" />
+                                <property name="child">
+                                  <object class="AdwButtonContent">
+                                    <property name="icon-name">document-open-symbolic</property>
+                                    <property name="label" translatable="yes">_New Character</property>
+                                  </object>
+                                </property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
                       </object>
                     </child>
-                    <child>
-                      <object class="GtkButton" id="new_button">
 
-                        <property name="halign">center</property>
-                        <signal name="clicked" handler="on_new" />
-                        <property name="child">
-                          <object class="AdwButtonContent">
-                            <property name="icon-name">document-open-symbolic</property>
-                            <property name="label" translatable="yes">_New Character</property>
-                          </object>
-                        </property>
-                      </object>
-                    </child>
+
                     <child>
                       <object class="GtkBox" id="recents_box">
 

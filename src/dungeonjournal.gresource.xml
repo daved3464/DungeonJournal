@@ -15,7 +15,6 @@
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/CharacterInfoPage.ui</file>
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/components/CharacterFeatRow.ui</file>
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/components/CharacterAttackRow.ui</file>
-        <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/components/ComboBoxRow.ui</file>
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/components/EntryRow.ui</file>
 
         <!-- Character Inventory Page -->
