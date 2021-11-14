@@ -7,5 +7,5 @@
             "url": "https://raw.githubusercontent.com/TingPing/flatpak-manifest-schema/master/flatpak-manifest.schema"
         }
     ],
-    "uncrustify.configPath.linux": "uncrustify.vala.cfg"
+    "uncrustify.configPath.linux": "uncrustify.vala.cfg",
 }

@@ -1,5 +1,6 @@
 build/
-builddir
+builddir/
+builddir/test
 .flatpak-builder/
 .flatpak
 _build
