@@ -1,4 +1,4 @@
-dragonjournal_sources = [
+dungeonjournal_sources = [
   ## Main App
   'Application.vala',
   'Util.vala',
@@ -15,22 +15,22 @@ dragonjournal_sources = [
   'ui/StartupWindow.vala',  
 
   ## Main Components 
-  'ui/components/CharacterRowInterface.vala',
-  'ui/components/RecentsCharacterRow.vala',
-  'ui/components/SeparatorRow.vala',
-  'ui/components/SpinButtonRow.vala',
-  'ui/components/SpinButtonCheckboxRow.vala',
+  'ui/widgets/CharacterRowInterface.vala',
+  'ui/widgets/RecentsCharacterRow.vala',
+  'ui/widgets/SeparatorRow.vala',
+  'ui/widgets/SpinButtonRow.vala',
+  'ui/widgets/SpinButtonCheckboxRow.vala',
+  'ui/widgets/EntryRow.vala',
+
 
   ## Character Info Page
-  'ui/pages/character-info/CharacterInfoPage.vala',
-  'ui/pages/character-info/components/CharacterAttackRow.vala',
-  'ui/pages/character-info/components/CharacterFeatRow.vala',
-  'ui/pages/character-info/components/ComboBoxRow.vala',
-  'ui/pages/character-info/components/EntryRow.vala',
+  'ui/pages/character-info/CharacterInfoPage.vala',  
+  'ui/pages/character-info/widgets/CharacterFeatRow.vala',
 
   ## Character Inventory Page
   'ui/pages/character-inventory/CharacterInventoryPage.vala',
-  'ui/pages/character-inventory/components/CharacterItemRow.vala',
+  'ui/pages/character-inventory/widgets/CharacterAttackRow.vala',
+  'ui/pages/character-inventory/widgets/CharacterItemRow.vala',
 
   ## Character Skills Page
   'ui/pages/character-skills/CharacterSkillsPage.vala',
@@ -53,14 +53,16 @@ c_args = [
   '-DLOCALEDIR="@0@"'.format(locale_dir),
 ]
 
-dragonjournal_sources += gnome.compile_resources('dungeonjournal-resources',
+dungeonjournal_sources += gnome.compile_resources('dungeonjournal-resources',
     'dungeonjournal.gresource.xml',
     c_name: 'dungeonjournal'
 )
 
+dungeonjournal_sources += icons_resources
+
 executable(
     meson.project_name(),
-    dragonjournal_sources,
+    dungeonjournal_sources,
     include_directories: config_h_dir,
     dependencies: dragonjournal_deps,
     c_args: c_args,

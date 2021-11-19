@@ -1,9 +1,12 @@
+using Gtk;
+using Gdk;
 using Adw;
 
 namespace DungeonJournal {
     public class App : Adw.Application {
         public static DungeonJournal.Settings settings;
         public DungeonJournal.ApplicationWindow window;
+        public Gtk.IconTheme icon_theme;
 
         public App() {
             Object(
@@ -16,7 +19,13 @@ namespace DungeonJournal {
 
         protected override void startup() {
             base.startup();
+            setup_style();
             setup_actions();
+        }
+
+        protected void setup_style() {
+            this.style_manager.set_color_scheme(ColorScheme.PREFER_DARK);
+            this.icon_theme = IconTheme.get_for_display(Display.get_default());
         }
 
         protected override void activate() {
@@ -78,9 +87,7 @@ namespace DungeonJournal {
                 logo_icon_name: Config.APP_ID,
                 program_name: "Dungeon Journal",
                 comments: _("Create Characters"),
-                copyright:
-                "2021 David Chamorro\n
-                © 2019 Tryton Van Meer",
+                copyrigth: "© 2019 Tryton Van Meer",
                 authors: authors,
                 website: "https://github.com/daved3464/DungeonJournal",
                 website_label: _("GitHub Homepage"),

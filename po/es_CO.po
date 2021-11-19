@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Dungeon Journal\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-14 16:52-0500\n"
-"PO-Revision-Date: 2021-11-14 16:53-0500\n"
+"PO-Revision-Date: 2021-11-16 17:09-0500\n"
 "Last-Translator: David Chamorro <daved3464@gmail.com>\n"
 "Language-Team: David Chamorro <daved3464@gmail.com>\n"
 "Language: es_CO\n"
@@ -27,7 +27,7 @@ msgstr "Página de GitHub"
 
 #: ui/ApplicationWindow.ui:31 ui/pages/character-info/CharacterInfoPage.ui:28
 msgid "_Info"
-msgstr "Info"
+msgstr "Información"
 
 #: ui/ApplicationWindow.ui:44
 msgid "_Inventory"
@@ -161,29 +161,29 @@ msgstr "Puntos de Golpe Temporales"
 msgid "Hit Dice"
 msgstr "Dado de Golpe"
 
-#: ui/pages/character-info/components/CharacterAttackRow.ui:89
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:89
 msgid "_Weapon"
 msgstr "Arma"
 
-#: ui/pages/character-info/components/CharacterAttackRow.ui:105
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:105
 msgid "_Range"
 msgstr "Rango"
 
-#: ui/pages/character-info/components/CharacterAttackRow.ui:121
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:121
 msgid "_Attack Bonus"
 msgstr "Bonus de Daño"
 
-#: ui/pages/character-info/components/CharacterAttackRow.ui:137
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:137
 msgid "_Damage/Type"
 msgstr "Daño/Tipo"
 
-#: ui/pages/character-info/components/CharacterFeatRow.ui:63
-#: ui/pages/character-inventory/components/CharacterItemRow.ui:105
+#: ui/pages/character-info/widgets/CharacterFeatRow.ui:63
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:105
 msgid "_Name"
 msgstr "Nombre"
 
-#: ui/pages/character-info/components/CharacterFeatRow.ui:80
-#: ui/pages/character-inventory/components/CharacterItemRow.ui:200
+#: ui/pages/character-info/widgets/CharacterFeatRow.ui:80
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:200
 msgid "_Description"
 msgstr "Descripción"
 
@@ -211,15 +211,15 @@ msgstr "Plata"
 msgid "Gold"
 msgstr "Oro"
 
-#: ui/pages/character-inventory/components/CharacterItemRow.ui:126
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:126
 msgid "_Quantity"
 msgstr "Cantidad"
 
-#: ui/pages/character-inventory/components/CharacterItemRow.ui:152
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:152
 msgid "_Cost"
 msgstr "Costo"
 
-#: ui/pages/character-inventory/components/CharacterItemRow.ui:173
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:173
 msgid "_Weight"
 msgstr "Peso"
 

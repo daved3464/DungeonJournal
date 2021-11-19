@@ -3,84 +3,67 @@
 <interface>
   <requires lib="gtk" version="4.0" />
   <requires lib="libadwaita" version="1.0" />
+
+  <object class="GtkAdjustment" id="clamp_maximum_size_adjustment">
+    <property name="upper">10000</property>
+    <property name="value">600</property>
+    <property name="page-increment">100</property>
+    <property name="step-increment">10</property>
+  </object>
+
+  <object class="GtkAdjustment" id="clamp_tightening_threshold_adjustment">
+    <property name="upper">10000</property>
+    <property name="value">500</property>
+    <property name="page-increment">100</property>
+    <property name="step-increment">10</property>
+  </object>
+
   <template class="DungeonJournalCharacterInventoryPage" parent="GtkBox">
     <property name="orientation">vertical</property>
     <property name="spacing">12</property>
     <child>
       <object class="GtkScrolledWindow">
-
-
         <property name="vexpand">True</property>
         <property name="hscrollbar_policy">external</property>
         <child>
           <object class="GtkViewport">
-
-
             <child>
-              <object class="GtkBox">
-                <property name="orientation">vertical</property>
-
-                <property name="margin-start">12</property>
-                <property name="margin-end">12</property>
-                <property name="margin-top">32</property>
-                <property name="margin-bottom">32</property>
-                <child>
+              <object class="AdwClamp">
+                <property name="maximum-size" bind-source="clamp_maximum_size_adjustment" bind-property="value" bind-flags="sync-create" />
+                <property name="tightening-threshold" bind-source="clamp_tightening_threshold_adjustment" bind-property="value" bind-flags="sync-create" />
+                <property name="child">
                   <object class="GtkBox">
-
-
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">32</property>
+                    <property name="margin-bottom">32</property>
                     <property name="orientation">vertical</property>
                     <property name="spacing">12</property>
+
+                    <!-- Currency List -->
                     <child>
-                      <object class="GtkLabel">
-
-
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">_Currency</property>
-                        <attributes>
-                          <attribute name="weight" value="bold" />
-                        </attributes>
-                      </object>
-
-                    </child>
-                    <child>
-                      <object class="GtkFrame">
-
-
-                        <property name="label_xalign">0</property>
-
+                      <object class="AdwPreferencesGroup">
+                        <property name="title" translatable="yes">_Currency</property>
                         <child>
                           <object class="GtkListBox" id="currency_listbox">
-
-
+                            <style>
+                              <class name="content"></class>
+                            </style>
                             <property name="selection_mode">none</property>
                           </object>
                         </child>
                       </object>
-
                     </child>
+
+                    <!-- Attacks List-->
                     <child>
-                      <object class="GtkLabel">
-
-
-                        <property name="halign">start</property>
-                        <property name="margin-top">18</property>
-                        <property name="label" translatable="yes">_Attacks</property>
-                        <attributes>
-                          <attribute name="weight" value="bold" />
-                        </attributes>
-                      </object>
-
-                    </child>
-                    <child>
-                      <object class="GtkFrame">
-
-
-                        <property name="label_xalign">0</property>
-
+                      <object class="AdwPreferencesGroup">
+                        <property name="title" translatable="yes">_Attacks</property>
                         <child>
                           <object class="GtkListBox" id="attacks_listbox">
-
-
+                            <style>
+                              <class name="content"></class>
+                            </style>
                             <property name="selection_mode">none</property>
                             <signal name="row-activated" handler="on_attacks_row_clicked" swapped="no" />
                             <child>
@@ -103,57 +86,38 @@
                           </object>
                         </child>
                       </object>
-
                     </child>
+
+                    <!-- Items List -->
                     <child>
-                      <object class="GtkLabel">
-
-
-                        <property name="halign">start</property>
-                        <property name="margin-top">18</property>
-                        <property name="label" translatable="yes">_Items</property>
-                        <attributes>
-                          <attribute name="weight" value="bold" />
-                        </attributes>
-                      </object>
-
-                    </child>
-                    <child>
-                      <object class="GtkFrame">
-
-
-                        <property name="label_xalign">0</property>
-
+                      <object class="AdwPreferencesGroup">
+                        <property name="title" translatable="yes">_Items</property>
                         <child>
                           <object class="GtkListBox" id="items_listbox">
-
-
+                            <style>
+                              <class name="content"></class>
+                            </style>
                             <property name="selection_mode">none</property>
                             <signal name="row-activated" handler="on_items_row_clicked" swapped="no" />
                             <child>
                               <object class="GtkListBoxRow" id="items_row_button">
-                                <property name="width_request">100</property>
-
-
-                                <property name="selectable">False</property>
-                                <child>
+                                <property name="selectable">0</property>
+                                <property name="child">
                                   <object class="GtkImage">
-
-
                                     <property name="margin-top">12</property>
                                     <property name="margin-bottom">12</property>
                                     <property name="icon-name">list-add-symbolic</property>
                                   </object>
-                                </child>
+                                </property>
                               </object>
                             </child>
                           </object>
                         </child>
                       </object>
-
                     </child>
+
                   </object>
-                </child>
+                </property>
               </object>
             </child>
           </object>

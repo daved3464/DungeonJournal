@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+  <requires lib="gtk" version="4.0" />
+  <requires lib="libadwaita" version="1.0" />
+
+  <object class="GtkAdjustment" id="adjustment">
+    <property name="upper">1000000</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+
+  <template class="DungeonJournalSpinButtonRow" parent="AdwActionRow">
+    <property name="activatable">False</property>
+    <property name="selectable">False</property>
+    <child>
+      <object class="GtkSpinButton" id="spinbutton">
+        <property name="valign">center</property>
+        <property name="width-request">100</property>
+        <property name="adjustment">adjustment</property>
+      </object>
+    </child>
+  </template>
+</interface>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+  <requires lib="gtk" version="4.0" />
+  <template class="DungeonJournalRecentsCharacterRow" parent="AdwActionRow">
+    <property name="activatable">1</property>
+    <property name="selectable">0</property>
+    <style>
+      <class name="activatable"></class>
+    </style>
+    <child type="suffix">
+      <object class="GtkButton" id="delete_button">
+        <signal name="clicked" handler="on_delete_button_clicked" swapped="no" />
+        <property name="valign">center</property>
+        <property name="child">
+          <object class="AdwButtonContent">
+            <property name="icon-name">edit-delete-symbolic</property>
+          </object>
+        </property>
+
+        <style>
+          <class name="destructive-action" />
+        </style>
+      </object>
+    </child>
+  </template>
+</interface>

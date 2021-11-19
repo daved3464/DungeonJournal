@@ -2,9 +2,9 @@
 <interface>
   <requires lib="gtk" version="4.0" />
   <requires lib="libadwaita" version="1.0" />
-  <template class="DungeonJournalStartupWindow" parent="AdwWindow">    
-    <property name="default_width">800</property>
-    <property name="default_height">576</property>
+  <template class="DungeonJournalStartupWindow" parent="AdwWindow">
+    <property name="default_width">540</property>
+    <property name="default_height">500</property>
     <property name="content">
       <object class="GtkBox">
 
@@ -12,6 +12,9 @@
         <property name="orientation">vertical</property>
         <child>
           <object class="AdwHeaderBar" id="headerbar">
+            <style>
+              <class name="flat"></class>
+            </style>
             <property name="title-widget">
               <object class="AdwWindowTitle">
                 <property name="title">Dungeon Journal</property>
@@ -35,12 +38,15 @@
 
                     <child>
                       <object class="GtkFlowBox">
-
+                        <property name="halign">center</property>
+                        <property name="max-children-per-line">2</property>
+                        <property name="selection-mode">none</property>
+                        <property name="homogeneous">1</property>
+                        <property name="column-spacing">12</property>
                         <child>
                           <object class="GtkFlowBoxChild">
                             <property name="child">
                               <object class="GtkButton" id="open_button">
-                                <property name="halign">center</property>
                                 <signal name="clicked" handler="on_open" />
                                 <property name="child">
                                   <object class="AdwButtonContent">
@@ -49,7 +55,8 @@
                                   </object>
                                 </property>
                                 <style>
-                                  <class name="suggested-action" />
+                                  <class name="suggested-action"></class>
+                                  <class name="pill"></class>
                                 </style>
                               </object>
                             </property>
@@ -60,21 +67,22 @@
                           <object class="GtkFlowBoxChild">
                             <property name="child">
                               <object class="GtkButton" id="new_button">
-                                <property name="halign">center</property>
                                 <signal name="clicked" handler="on_new" />
                                 <property name="child">
                                   <object class="AdwButtonContent">
-                                    <property name="icon-name">document-open-symbolic</property>
+                                    <property name="icon-name">list-add-symbolic</property>
                                     <property name="label" translatable="yes">_New Character</property>
                                   </object>
                                 </property>
+                                <style>
+                                  <class name="pill"></class>
+                                </style>
                               </object>
                             </property>
                           </object>
                         </child>
                       </object>
                     </child>
-
 
                     <child>
                       <object class="GtkBox" id="recents_box">
@@ -91,16 +99,19 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkFrame">
-
-                            <property name="child">
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <property name="spacing">12</property>
+                            <child>
                               <object class="GtkListBox" id="recents_listbox">
-
                                 <property name="selection_mode">none</property>
+                                <style>
+                                  <class name="content"></class>
+                                </style>
                                 <signal name="row-activated" handler="on_recents_row_clicked" />
                                 <signal name="row-selected" handler="on_recents_row_delete" />
                               </object>
-                            </property>
+                            </child>
                           </object>
                         </child>
                       </object>

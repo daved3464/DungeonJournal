@@ -164,29 +164,29 @@ msgstr ""
 msgid "Hit Dice"
 msgstr ""
 
-#: ui/pages/character-info/components/CharacterAttackRow.ui:89
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:89
 msgid "_Weapon"
 msgstr ""
 
-#: ui/pages/character-info/components/CharacterAttackRow.ui:105
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:105
 msgid "_Range"
 msgstr ""
 
-#: ui/pages/character-info/components/CharacterAttackRow.ui:121
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:121
 msgid "_Attack Bonus"
 msgstr ""
 
-#: ui/pages/character-info/components/CharacterAttackRow.ui:137
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:137
 msgid "_Damage/Type"
 msgstr ""
 
-#: ui/pages/character-info/components/CharacterFeatRow.ui:63
-#: ui/pages/character-inventory/components/CharacterItemRow.ui:105
+#: ui/pages/character-info/widgets/CharacterFeatRow.ui:63
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:105
 msgid "_Name"
 msgstr ""
 
-#: ui/pages/character-info/components/CharacterFeatRow.ui:80
-#: ui/pages/character-inventory/components/CharacterItemRow.ui:200
+#: ui/pages/character-info/widgets/CharacterFeatRow.ui:80
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:200
 msgid "_Description"
 msgstr ""
 
@@ -214,15 +214,15 @@ msgstr ""
 msgid "Gold"
 msgstr ""
 
-#: ui/pages/character-inventory/components/CharacterItemRow.ui:126
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:126
 msgid "_Quantity"
 msgstr ""
 
-#: ui/pages/character-inventory/components/CharacterItemRow.ui:152
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:152
 msgid "_Cost"
 msgstr ""
 
-#: ui/pages/character-inventory/components/CharacterItemRow.ui:173
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:173
 msgid "_Weight"
 msgstr ""
 

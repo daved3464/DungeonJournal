@@ -1,7 +1,7 @@
 {
     "app-id" : "io.github.daved3464.DungeonJournal.Devel",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "41",
+    "runtime" : "org.gnome.Sdk",
+    "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
     "command" : "dungeonjournal",
     "finish-args" : [
@@ -28,7 +28,6 @@
         "*.a"
     ],
     "modules" : [
-
         {
             "name" : "dungeonjournal",
             "builddir" : true,
@@ -46,9 +45,6 @@
         }
     ],
     "build-options" : {
-        "env" : {
-            "CFLAGS+" : "-DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED"
-        },
-        "cflags" : ""
+        "env" : {        }
     }
 }

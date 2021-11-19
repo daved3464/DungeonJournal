@@ -17,6 +17,10 @@ namespace DungeonJournal {
             this.window = window;
 
             this.setup_recents();
+
+            this.close_request.connect(() => {
+                return this.on_close();
+            });
         }
 
         public void show_all() {
@@ -39,19 +43,23 @@ namespace DungeonJournal {
             }
         }
 
-        private void finish_startup() {
+        public void finish_startup() {
             this.done_startup = true;
             this.window.show();
-            this.destroy();
+            this.hide();
+        }
+
+        private bool on_close() {
+            if (!this.done_startup) {
+                this.window.destroy();
+                this.application = null;
+            }
+            return false;
         }
 
         [GtkCallback]
         private void on_open() {
             this.window.on_open(this);
-            stdout.printf("Finished startup %b", this.window.startup_finished);
-            if (this.window.startup_finished) {
-                this.finish_startup();
-            }
         }
 
         [GtkCallback]
@@ -61,27 +69,21 @@ namespace DungeonJournal {
 
         [GtkCallback]
         private void on_recents_row_clicked(ListBoxRow row) {
-            var recent_row = (RecentsCharacterRow) row;
+            var char_row = (RecentsCharacterRow) row;
+            var found = this.window.open_character(char_row.file_path);
 
-            this.window.open_character(recent_row.file_path);
-            this.finish_startup();
+            if (found) {
+                this.finish_startup();
+            }
         }
 
         [GtkCallback]
         private void on_recents_row_delete(ListBox listbox, ListBoxRow? row) {
-            var recent_row = (RecentsCharacterRow) row;
-
-            this.window.remove_recent_file(recent_row.file_path);
+            var char_row = (RecentsCharacterRow) row;
+            this.window.remove_recent_file(char_row.file_path);
 
             this.recents_listbox.remove(row);
             this.hide_listbox_if_empty();
-        }
-
-        [GtkCallback]
-        private void on_destroy() {
-            if (!this.done_startup) {
-                this.window.get_application().quit();
-            }
         }
     }
 }

@@ -2,28 +2,27 @@
 <gresources>
     <gresource prefix="/io/github/daved3464/DungeonJournal">
         <file compressed="true">ui/styles/dungeonjournal.css</file>
-        <!-- Main Windows -->
-        <file compressed="true" preprocess="xml-stripblanks">ui/ApplicationWindow.ui</file>
-        <file compressed="true" preprocess="xml-stripblanks">ui/StartupWindow.ui</file>
-
         <!-- General Components -->
-        <file compressed="true" preprocess="xml-stripblanks">ui/components/SpinButtonRow.ui</file>
-        <file compressed="true" preprocess="xml-stripblanks">ui/components/SpinButtonCheckboxRow.ui</file>
-        <file compressed="true" preprocess="xml-stripblanks">ui/components/RecentsCharacterRow.ui</file>
+        <file compressed="true" preprocess="xml-stripblanks">ui/widgets/EntryRow.ui</file>
+        <file compressed="true" preprocess="xml-stripblanks">ui/widgets/SpinButtonRow.ui</file>
+        <file compressed="true" preprocess="xml-stripblanks">ui/widgets/SpinButtonCheckboxRow.ui</file>
+        <file compressed="true" preprocess="xml-stripblanks">ui/widgets/RecentsCharacterRow.ui</file>
 
         <!-- Character Info Page -->
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/CharacterInfoPage.ui</file>
-        <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/components/CharacterFeatRow.ui</file>
-        <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/components/CharacterAttackRow.ui</file>
-        <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/components/EntryRow.ui</file>
+        <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/widgets/CharacterFeatRow.ui</file>
 
         <!-- Character Inventory Page -->
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-inventory/CharacterInventoryPage.ui</file>
-        <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-inventory/components/CharacterItemRow.ui</file>
+        <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-inventory/widgets/CharacterAttackRow.ui</file>
+        <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-inventory/widgets/CharacterItemRow.ui</file>
 
         <!-- Character Skills Page -->
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-skills/CharacterSkillsPage.ui</file>
 
+        <!-- Main Windows -->
+        <file compressed="true" preprocess="xml-stripblanks">ui/ApplicationWindow.ui</file>
+        <file compressed="true" preprocess="xml-stripblanks">ui/StartupWindow.ui</file>
 
     </gresource>
 </gresources>

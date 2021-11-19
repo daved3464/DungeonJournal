@@ -9,8 +9,9 @@
             "command": "${workspaceFolder}/build_test.sh",
             "group": "build",
             "presentation": {
-                "reveal": "always",
-                "panel": "new"
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "panel": "shared"
             },
             "problemMatcher": []
         }

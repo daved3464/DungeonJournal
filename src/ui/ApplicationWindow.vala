@@ -1,27 +1,28 @@
 using Gtk;
 using Gee;
+using Adw;
 
 namespace DungeonJournal {
     [GtkTemplate(ui = "/io/github/daved3464/DungeonJournal/ui/ApplicationWindow.ui")]
     public class ApplicationWindow : Adw.ApplicationWindow {
 
-        private Adw.ViewStack stack;
+        [GtkChild]
+        private unowned Adw.HeaderBar headerbar;
 
-        private CharacterInfoPage page_info;
+        [GtkChild]
+        private unowned Adw.ViewStack stack;
+
+        private CharacterInfoPage page_info { get; set; }
         private CharacterSkillsPage page_skills;
         private CharacterInventoryPage page_inventory;
 
         private CharacterSheet character;
         private string character_path;
 
-        public bool startup_finished;
-
         private StartupWindow startup_window;
 
         public ApplicationWindow(Adw.Application app) {
             Object(application: app);
-
-            this.stack = new Adw.ViewStack();
 
             this.character = new CharacterSheet();
             this.character_path = null;
@@ -34,16 +35,38 @@ namespace DungeonJournal {
             startup_window.show_all();
         }
 
-        private void setup_style() {}
+        private void setup_style() {
+            // TODO Implement any custom styling
+        }
 
         private void setup_view() {
-            this.page_info = new CharacterInfoPage();
-            this.page_skills = new CharacterSkillsPage();
-            this.page_inventory = new CharacterInventoryPage();
 
-            this.stack.add_titled(this.page_info, "info", _("Info"));
-            this.stack.add_titled(this.page_skills, "skills", _("Skills"));
-            this.stack.add_titled(this.page_inventory, "inventory", _("Inventory"));
+            string[] button_class = { "destructive-action" };
+
+            var button = new Button();
+
+            button.clicked.connect(() => {
+                this.on_save();
+            });
+
+            button.set_child(new Label(_("_Save")));
+            button.set_css_classes(button_class);
+
+            this.headerbar.pack_end(button);
+
+            /** Add Pages to Stack */
+            this.page_info = new CharacterInfoPage(this, this.character);
+            this.page_inventory = new CharacterInventoryPage();
+            this.page_skills = new CharacterSkillsPage();
+
+
+            this.stack.add_titled(this.page_info, "info", _("_Info"));
+            this.stack.add_titled(this.page_inventory, "inventory", _("_Inventory"));
+            this.stack.add_titled(this.page_skills, "skills", _("_Skills"));
+
+            this.stack.get_page(this.page_info).set_icon_name("book-symbolic");
+            this.stack.get_page(this.page_inventory).set_icon_name("basic-bag-symbolic");
+            this.stack.get_page(this.page_skills).set_icon_name("skill-vision-symbolic");
         }
 
         private void bind_character() {
@@ -56,7 +79,7 @@ namespace DungeonJournal {
             var filter = new FileFilter();
             filter.add_mime_type("application/json");
 
-            var dialog = new FileChooserDialog(
+            var chooser = new FileChooserNative(
                 _("_Open Character"),
                 parent,
                 FileChooserAction.OPEN,
@@ -64,20 +87,18 @@ namespace DungeonJournal {
                 _("_Cancel")
             );
 
-            dialog.set_modal(true);
+            chooser.set_modal(true);
+            chooser.set_filter(filter);
+            chooser.show();
 
-            dialog.set_filter(filter);
-
-            dialog.show();
-
-            dialog.response.connect((res) => {
-                stdout.printf("Response %d", res);
+            chooser.response.connect_after((res) => {
                 if (res == ResponseType.ACCEPT) {
-                    string path = dialog.get_file().get_path();
+                    string path = chooser.get_file().get_path();
                     this.open_character(path);
-                    this.startup_finished = true;
-                } else {
-                    this.startup_finished = false;
+
+                    if (parent == this.startup_window) {
+                        this.startup_window.finish_startup();
+                    }
                 }
             });
         }
@@ -91,7 +112,7 @@ namespace DungeonJournal {
         }
 
         public void on_save_as() {
-            var dialog = new FileChooserNative(
+            var chooser = new FileChooserNative(
                 _("_Save Character"),
                 this,
                 FileChooserAction.SAVE,
@@ -99,38 +120,37 @@ namespace DungeonJournal {
                 _("_Cancel")
             );
 
-            dialog.set_current_name(this.character.name + ".json");
-            // dialog.set_do_overwrite_confirmation(true);
+            chooser.set_current_name(this.character.name + ".json");
+            chooser.show();
 
-            dialog.show();
+            chooser.response.connect_after((res) => {
+                if (res == ResponseType.ACCEPT) {
+                    string path = chooser.get_file().get_path();
 
-            string path = dialog.get_file().get_path();
+                    this.save_character(path);
+                    this.character_path = path;
+                }
+            });
 
-            this.save_character(path);
-            this.character_path = path;
-
-            /*  if (dialog.show() == ResponseType.ACCEPT)
-               {
-                string path = dialog.get_file().get_path();
-
-                this.save_character(path);
-                this.character_path = path;
-               }  */
-
-            dialog.destroy();
+            chooser.destroy();
         }
 
-        public void open_character(string file_path) {
+        public bool open_character(string file_path) {
             try {
                 var parser = new Json.Parser();
                 parser.load_from_file(file_path);
+
                 Json.Node node = parser.get_root();
+
                 this.character = Json.gobject_deserialize(typeof (CharacterSheet), node) as CharacterSheet;
+
                 this.bind_character();
                 this.add_recent_file(file_path);
                 this.character_path = file_path;
+                return true;
             } catch (Error e) {
                 log(null, LogLevelFlags.LEVEL_ERROR, "Error Opening Character: %s\n", file_path);
+                return false;
             }
         }
 

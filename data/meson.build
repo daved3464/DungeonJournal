@@ -45,3 +45,10 @@ install_data(
   join_paths('icons', 'scalable', 'apps', '@0@.svg'.format(app_id)),
   install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', 'scalable', 'apps')
 )
+
+# Emblem icons
+icons_resources = gnome.compile_resources(
+  'dungeonjournal-icons-resources',
+  'dungeonjournal-icons.gresources.xml',
+  c_name: 'dungeonjournal_icons'
+)

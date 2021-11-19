@@ -59,48 +59,37 @@ namespace DungeonJournal {
             this.strength_save = new SpinButtonCheckboxRow(_("Saving Throws"));
 
             this.strength_listbox.append(this.strength_score);
-            this.strength_listbox.append(new SeparatorRow());
             this.strength_listbox.append(this.strength_save);
-            this.strength_listbox.append(new SeparatorRow());
 
             this.dexterity_score = new SpinButtonRow.with_ability_score_label();
             this.dexterity_save = new SpinButtonCheckboxRow(_("Saving Throws"));
 
             this.dexterity_listbox.append(this.dexterity_score);
-            this.dexterity_listbox.append(new SeparatorRow());
             this.dexterity_listbox.append(this.dexterity_save);
-            this.dexterity_listbox.append(new SeparatorRow());
 
             this.constitution_score = new SpinButtonRow.with_ability_score_label();
             this.constitution_save = new SpinButtonCheckboxRow(_("Saving Throws"));
 
             this.constitution_listbox.append(this.constitution_score);
-            this.constitution_listbox.append(new SeparatorRow());
             this.constitution_listbox.append(this.constitution_save);
 
             this.intelligence_score = new SpinButtonRow.with_ability_score_label();
             this.intelligence_save = new SpinButtonCheckboxRow(_("Saving Throws"));
 
             this.intelligence_listbox.append(this.intelligence_score);
-            this.intelligence_listbox.append(new SeparatorRow());
             this.intelligence_listbox.append(this.intelligence_save);
-            this.intelligence_listbox.append(new SeparatorRow());
 
             this.wisdom_score = new SpinButtonRow.with_ability_score_label();
             this.wisdom_save = new SpinButtonCheckboxRow(_("Saving Throws"));
 
             this.wisdom_listbox.append(this.wisdom_score);
-            this.wisdom_listbox.append(new SeparatorRow());
             this.wisdom_listbox.append(this.wisdom_save);
-            this.wisdom_listbox.append(new SeparatorRow());
 
             this.charisma_score = new SpinButtonRow.with_ability_score_label();
             this.charisma_save = new SpinButtonCheckboxRow(_("Saving Throws"));
 
             this.charisma_listbox.append(this.charisma_score);
-            this.charisma_listbox.append(new SeparatorRow());
             this.charisma_listbox.append(this.charisma_save);
-            this.charisma_listbox.append(new SeparatorRow());
         }
 
         private void setup_view_skills() {
@@ -140,9 +129,7 @@ namespace DungeonJournal {
             this.abilities.get(ability).append(skill_row);
             this.skills.add(skill_row);
 
-            if (separator) {
-                this.abilities.get(ability).append(new SeparatorRow());
-            }
+            if (separator) {}
         }
 
         public void bind_character(CharacterSheet character) {

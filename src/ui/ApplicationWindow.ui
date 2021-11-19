@@ -3,8 +3,8 @@
   <requires lib="gtk" version="4.0" />
   <requires lib="libadwaita" version="1.0" />
   <template class="DungeonJournalApplicationWindow" parent="AdwApplicationWindow">
-    <property name="default-width">720</property>
-    <property name="default-height">640</property>
+    <property name="default-width">540</property>
+    <property name="default-height">500</property>
     <property name="icon-name">io.github.daved3464.DungeonJournal</property>
     <property name="title">Dungeon Journal</property>
     <property name="content">
@@ -12,7 +12,7 @@
         <property name="vexpand">1</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="AdwHeaderBar">
+          <object class="AdwHeaderBar" id="headerbar">
             <property name="centering-policy">strict</property>
             <property name="title-widget">
               <object class="AdwViewSwitcherTitle" id="switcher_title">
@@ -22,50 +22,13 @@
             </property>
           </object>
         </child>
+
         <child>
           <object class="AdwViewStack" id="stack">
             <property name="vexpand">True</property>
-            <child>
-              <object class="AdwViewStackPage">
-                <property name="name">info</property>
-                <property name="title" translatable="yes">_Info</property>
-                <property name="icon-name"></property>
-                <property name="child">
-                  <object class="GtkBox" id="page_info">
-                    <property name="orientation">vertical</property>
-                    <property name="spacing">12</property>
-                  </object>
-                </property>
-              </object>
-            </child>
-            <child>
-              <object class="AdwViewStackPage">
-                <property name="name">inventory</property>
-                <property name="title" translatable="yes">_Inventory</property>
-                <property name="icon-name"></property>
-                <property name="child">
-                  <object class="GtkBox" id="page_inventory">
-                    <property name="orientation">vertical</property>
-                    <property name="spacing">12</property>
-                  </object>
-                </property>
-              </object>
-            </child>
-            <child>
-              <object class="AdwViewStackPage">
-                <property name="name">skills</property>
-                <property name="title" translatable="yes">_Skills</property>
-                <property name="icon-name"></property>
-                <property name="child">
-                  <object class="GtkBox" id="page_skills">
-                    <property name="orientation">vertical</property>
-                    <property name="spacing">12</property>
-                  </object>
-                </property>
-              </object>
-            </child>
           </object>
         </child>
+
         <child>
           <object class="AdwViewSwitcherBar" id="switcher_bar">
             <property name="stack">stack</property>
@@ -75,4 +38,6 @@
       </object>
     </property>
   </template>
+
+
 </interface>

@@ -1,7 +1,7 @@
-namespace DungeonJournal
-{
-    public class Util
-    {
+namespace DungeonJournal {
+    public class Util {
+        public const uint MAX_IMAGE_BYTES = 5242880;
+
         public const BindingFlags BINDING_FLAGS = BindingFlags.SYNC_CREATE | BindingFlags.BIDIRECTIONAL;
 
         public const string[] ARRAY_DICE = {
@@ -13,23 +13,18 @@ namespace DungeonJournal
             "d20"
         };
 
-        public static string calculate_ability_modifier(double ability_score)
-        {
+        public static string calculate_ability_modifier(double ability_score) {
             double modifier = Math.floor((ability_score - 10) / 2);
 
-            if (modifier > 0)
-            {
+            if (modifier > 0) {
                 return @"+$modifier";
-            }
-            else
-            {
+            } else {
                 return @"$modifier";
             }
         }
     }
 
-    public enum Ability
-    {
+    public enum Ability {
         STRENGTH,
         DEXTERITY,
         CONSTITUTION,
