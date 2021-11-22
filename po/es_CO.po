@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dungeon Journal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-14 16:52-0500\n"
-"PO-Revision-Date: 2021-11-16 17:09-0500\n"
+"POT-Creation-Date: 2021-11-22 10:24-0500\n"
+"PO-Revision-Date: 2021-11-22 10:25-0500\n"
 "Last-Translator: David Chamorro <daved3464@gmail.com>\n"
 "Language-Team: David Chamorro <daved3464@gmail.com>\n"
 "Language: es_CO\n"
@@ -17,327 +17,348 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Application.vala:80
+#: Application.vala:90
 msgid "Create Characters"
 msgstr "Cree algunos personajes"
 
-#: Application.vala:84
+#: Application.vala:94
 msgid "GitHub Homepage"
 msgstr "Página de GitHub"
 
-#: ui/ApplicationWindow.ui:31 ui/pages/character-info/CharacterInfoPage.ui:28
-msgid "_Info"
-msgstr "Información"
-
-#: ui/ApplicationWindow.ui:44
-msgid "_Inventory"
-msgstr "Inventario"
-
-#: ui/ApplicationWindow.ui:57
-msgid "_Skills"
-msgstr "Habilidades"
-
-#: ui/ApplicationWindow.vala:77 ui/StartupWindow.ui:48
-msgid "_Open Character"
-msgstr "Buscar personaje"
-
-#: ui/ApplicationWindow.vala:80
-msgid "_Open"
-msgstr "Abrir"
-
-#: ui/ApplicationWindow.vala:81 ui/ApplicationWindow.vala:114
-msgid "_Cancel"
-msgstr "Cancelar"
-
-#: ui/ApplicationWindow.vala:110
-msgid "_Save Character"
-msgstr "Guardar el personaje"
-
-#: ui/ApplicationWindow.vala:113
-msgid "_Save"
+#: ui/ApplicationWindow.vala:80 ui/ApplicationWindow.vala:159
+msgid "Save"
 msgstr "Guardar"
 
-#: ui/StartupWindow.ui:25
-msgid "_Create some characters"
-msgstr "Cree algunos personajes"
+#: ui/ApplicationWindow.vala:91 ui/pages/character-info/CharacterInfoPage.ui:62
+msgid "Info"
+msgstr "Información"
 
-#: ui/StartupWindow.ui:68
-msgid "_New Character"
-msgstr "Nuevo personaje"
+#: ui/ApplicationWindow.vala:92
+msgid "Inventory"
+msgstr "Inventario"
 
-#: ui/StartupWindow.ui:87
-msgid "_Recent Characters"
-msgstr "Personajes Recientes"
+#: ui/ApplicationWindow.vala:93
+msgid "Skills"
+msgstr "Habilidades"
 
-#: ui/pages/character-info/CharacterInfoPage.ui:47
-msgid "_Stats"
+#: ui/ApplicationWindow.vala:127
+#: ui/pages/character-select/CharacterSelectPage.ui:54
+msgid "Open Character"
+msgstr "Buscar personaje"
+
+#: ui/ApplicationWindow.vala:130
+#: ui/pages/character-info/CharacterInfoPage.vala:305
+msgid "Open"
+msgstr "Abrir"
+
+#: ui/ApplicationWindow.vala:131 ui/ApplicationWindow.vala:160
+#: ui/pages/character-info/CharacterInfoPage.vala:306
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: ui/ApplicationWindow.vala:156
+msgid "Save Character"
+msgstr "Guardar el personaje"
+
+#: ui/ApplicationWindow.vala:190
+msgid "Error opening character"
+msgstr "Error al abrir el personaje"
+
+#: ui/pages/character-info/CharacterInfoPage.ui:78
+msgid "Stats"
 msgstr "Estadísticas"
 
-#: ui/pages/character-info/CharacterInfoPage.ui:66
-msgid "_Features"
+#: ui/pages/character-info/CharacterInfoPage.ui:93
+msgid "Attacks"
+msgstr "Ataques"
+
+#: ui/pages/character-info/CharacterInfoPage.ui:116
+msgid "Features"
 msgstr "Características"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:42
+#: ui/pages/character-info/CharacterInfoPage.vala:73
 msgid "Character Name"
-msgstr "Nuevo personaje"
+msgstr "Nombre del Personaje"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:43
+#: ui/pages/character-info/CharacterInfoPage.vala:74
 msgid "Class"
 msgstr "Clase"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:44
+#: ui/pages/character-info/CharacterInfoPage.vala:75
 msgid "Race"
 msgstr "Raza"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:47
+#: ui/pages/character-info/CharacterInfoPage.vala:78
 msgid "Lawful Good"
 msgstr "Legal Bueno"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:48
+#: ui/pages/character-info/CharacterInfoPage.vala:79
 msgid "Neutral Good"
 msgstr "Neutral Bueno"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:49
+#: ui/pages/character-info/CharacterInfoPage.vala:80
 msgid "Chaotic Good"
 msgstr "Caótico Bueno"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:50
+#: ui/pages/character-info/CharacterInfoPage.vala:81
 msgid "Neutral"
 msgstr "Netrual"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:51
+#: ui/pages/character-info/CharacterInfoPage.vala:82
 msgid "Lawful Evil"
 msgstr "Legal Malvado"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:52
+#: ui/pages/character-info/CharacterInfoPage.vala:83
 msgid "Neutral Evil"
 msgstr "Neutral Malvado"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:53
+#: ui/pages/character-info/CharacterInfoPage.vala:84
 msgid "Chaotic Evil"
 msgstr "Caótico Malvado"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:57
+#: ui/pages/character-info/CharacterInfoPage.vala:89
 msgid "Alignment"
 msgstr "Alineamiento"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:60
+#: ui/pages/character-info/CharacterInfoPage.vala:93
 msgid "Level"
 msgstr "Nivel"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:61
+#: ui/pages/character-info/CharacterInfoPage.vala:94
 msgid "Experience Points"
 msgstr "Puntos de Experiencia"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:83
+#: ui/pages/character-info/CharacterInfoPage.vala:107
 msgid "Proficiency Bonus"
 msgstr "Bonificador por Competencia"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:84
+#: ui/pages/character-info/CharacterInfoPage.vala:108
 msgid "Armor Class"
 msgstr "Clase de Armadura"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:85
+#: ui/pages/character-info/CharacterInfoPage.vala:109
 msgid "Initiative"
 msgstr "Iniciativa"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:86
+#: ui/pages/character-info/CharacterInfoPage.vala:110
 msgid "Speed"
 msgstr "Velocidad"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:87
+#: ui/pages/character-info/CharacterInfoPage.vala:111
 msgid "Hit Point Maximum"
 msgstr "Puntos de Golpe Máximos"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:88
+#: ui/pages/character-info/CharacterInfoPage.vala:112
 msgid "Current Hit Points"
 msgstr "Puntos de Golpe Actuales"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:89
+#: ui/pages/character-info/CharacterInfoPage.vala:113
 msgid "Temporary Hit Points"
 msgstr "Puntos de Golpe Temporales"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:92
+#: ui/pages/character-info/CharacterInfoPage.vala:116
 msgid "Hit Dice"
 msgstr "Dado de Golpe"
 
-#: ui/pages/character-info/widgets/CharacterAttackRow.ui:89
-msgid "_Weapon"
-msgstr "Arma"
+#: ui/pages/character-info/CharacterInfoPage.vala:302
+msgid "Pick an Avatar"
+msgstr "Elija un Avatar"
 
-#: ui/pages/character-info/widgets/CharacterAttackRow.ui:105
-msgid "_Range"
+#: ui/pages/character-info/CharacterInfoPage.vala:320
+msgid "The size of the picture is bigger than the 5MB allowed size"
+msgstr "El tamaño de la imágen es mayor a los 5 MB permitidos"
+
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:29
+msgid "Weapon or Spell"
+msgstr "Arma o Hechizo"
+
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:40
+msgid "Range"
 msgstr "Rango"
 
-#: ui/pages/character-info/widgets/CharacterAttackRow.ui:121
-msgid "_Attack Bonus"
-msgstr "Bonus de Daño"
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:51
+msgid "Damage"
+msgstr "Daño"
 
-#: ui/pages/character-info/widgets/CharacterAttackRow.ui:137
-msgid "_Damage/Type"
-msgstr "Daño/Tipo"
+#: ui/pages/character-info/widgets/CharacterAttackRow.ui:62
+msgid "Attack Bonus"
+msgstr "Bonus de Ataque"
 
-#: ui/pages/character-info/widgets/CharacterFeatRow.ui:63
-#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:105
-msgid "_Name"
+#: ui/pages/character-info/widgets/CharacterFeatRow.ui:27
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:43
+msgid "Name"
 msgstr "Nombre"
 
-#: ui/pages/character-info/widgets/CharacterFeatRow.ui:80
-#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:200
-msgid "_Description"
-msgstr "Descripción"
-
-#: ui/pages/character-inventory/CharacterInventoryPage.ui:38
-msgid "_Currency"
+#: ui/pages/character-inventory/CharacterInventoryPage.ui:46
+msgid "Currency"
 msgstr "Moneda"
 
-#: ui/pages/character-inventory/CharacterInventoryPage.ui:67
-msgid "_Attacks"
-msgstr "Ataques"
-
-#: ui/pages/character-inventory/CharacterInventoryPage.ui:114
-msgid "_Items"
+#: ui/pages/character-inventory/CharacterInventoryPage.ui:62
+msgid "Items"
 msgstr "Objetos"
 
-#: ui/pages/character-inventory/CharacterInventoryPage.vala:34
+#: ui/pages/character-inventory/CharacterInventoryPage.vala:32
 msgid "Copper"
 msgstr "Cobre"
 
-#: ui/pages/character-inventory/CharacterInventoryPage.vala:35
+#: ui/pages/character-inventory/CharacterInventoryPage.vala:33
 msgid "Silver"
 msgstr "Plata"
 
-#: ui/pages/character-inventory/CharacterInventoryPage.vala:36
+#: ui/pages/character-inventory/CharacterInventoryPage.vala:34
 msgid "Gold"
 msgstr "Oro"
 
-#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:126
-msgid "_Quantity"
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:56
+msgid "Quantity"
 msgstr "Cantidad"
 
-#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:152
-msgid "_Cost"
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:70
+msgid "Cost"
 msgstr "Costo"
 
-#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:173
-msgid "_Weight"
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:82
+msgid "Weight"
 msgstr "Peso"
 
-#: ui/pages/character-skills/CharacterSkillsPage.ui:39
-msgid "_Strength"
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:108
+msgid "Description"
+msgstr "Descripción"
+
+#: ui/pages/character-select/CharacterSelectPage.ui:23
+msgid "Dungeon Journal"
+msgstr "Dungeon Journal"
+
+#: ui/pages/character-select/CharacterSelectPage.ui:24
+msgid "Create some characters"
+msgstr "Cree algunos personajes"
+
+#: ui/pages/character-select/CharacterSelectPage.ui:74
+msgid "New Character"
+msgstr "Nuevo personaje"
+
+#: ui/pages/character-select/CharacterSelectPage.ui:95
+msgid "Recent Characters"
+msgstr "Personajes Recientes"
+
+#: ui/pages/character-skills/CharacterSkillsPage.ui:52
+msgid "Strength"
 msgstr "Fuerza"
 
-#: ui/pages/character-skills/CharacterSkillsPage.ui:68
-msgid "_Dexterity"
+#: ui/pages/character-skills/CharacterSkillsPage.ui:67
+msgid "Dexterity"
 msgstr "Destreza"
 
-#: ui/pages/character-skills/CharacterSkillsPage.ui:97
-msgid "_Constitution"
+#: ui/pages/character-skills/CharacterSkillsPage.ui:82
+msgid "Constitution"
 msgstr "Constitución"
 
-#: ui/pages/character-skills/CharacterSkillsPage.ui:126
-msgid "_Intelligence"
+#: ui/pages/character-skills/CharacterSkillsPage.ui:97
+msgid "Intelligence"
 msgstr "Inteligencia"
 
-#: ui/pages/character-skills/CharacterSkillsPage.ui:155
-msgid "_Wisdom"
+#: ui/pages/character-skills/CharacterSkillsPage.ui:112
+msgid "Wisdom"
 msgstr "Sabiduría"
 
-#: ui/pages/character-skills/CharacterSkillsPage.ui:184
-msgid "_Charisma"
+#: ui/pages/character-skills/CharacterSkillsPage.ui:127
+msgid "Charisma"
 msgstr "Carisma"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:59
-#: ui/pages/character-skills/CharacterSkillsPage.vala:67
+#: ui/pages/character-skills/CharacterSkillsPage.vala:63
+#: ui/pages/character-skills/CharacterSkillsPage.vala:69
 #: ui/pages/character-skills/CharacterSkillsPage.vala:75
-#: ui/pages/character-skills/CharacterSkillsPage.vala:82
-#: ui/pages/character-skills/CharacterSkillsPage.vala:90
-#: ui/pages/character-skills/CharacterSkillsPage.vala:98
+#: ui/pages/character-skills/CharacterSkillsPage.vala:81
+#: ui/pages/character-skills/CharacterSkillsPage.vala:87
+#: ui/pages/character-skills/CharacterSkillsPage.vala:93
 msgid "Saving Throws"
 msgstr "Tiradas de Salvación"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:108
+#: ui/pages/character-skills/CharacterSkillsPage.vala:101
 msgid "Athletics"
 msgstr "Atletismo"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:111
+#: ui/pages/character-skills/CharacterSkillsPage.vala:104
 msgid "Acrobatics"
 msgstr "Acrobacias"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:112
+#: ui/pages/character-skills/CharacterSkillsPage.vala:105
 msgid "Sleight of Hand"
 msgstr "Juego de Manos"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:113
+#: ui/pages/character-skills/CharacterSkillsPage.vala:106
 msgid "Stealth"
 msgstr "Sigilo"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:116
+#: ui/pages/character-skills/CharacterSkillsPage.vala:109
 msgid "Arcana"
 msgstr "Conocimiento Arcano"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:117
+#: ui/pages/character-skills/CharacterSkillsPage.vala:110
 msgid "History"
 msgstr "Historia"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:118
+#: ui/pages/character-skills/CharacterSkillsPage.vala:111
 msgid "Investigation"
 msgstr "Investigación"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:119
+#: ui/pages/character-skills/CharacterSkillsPage.vala:112
 msgid "Nature"
 msgstr "Naturaleza"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:120
+#: ui/pages/character-skills/CharacterSkillsPage.vala:113
 msgid "Religion"
 msgstr "Religión"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:123
+#: ui/pages/character-skills/CharacterSkillsPage.vala:116
 msgid "Animal Handling"
 msgstr "Técnica con Animales"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:124
+#: ui/pages/character-skills/CharacterSkillsPage.vala:117
 msgid "Insight"
 msgstr "Perspicacia"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:125
+#: ui/pages/character-skills/CharacterSkillsPage.vala:118
 msgid "Medicine"
 msgstr "Medicina"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:126
+#: ui/pages/character-skills/CharacterSkillsPage.vala:119
 msgid "Perception"
 msgstr "Percepción"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:127
+#: ui/pages/character-skills/CharacterSkillsPage.vala:120
 msgid "Survival"
 msgstr "Supervivencia"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:130
+#: ui/pages/character-skills/CharacterSkillsPage.vala:123
 msgid "Deception"
 msgstr "Engaño"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:131
+#: ui/pages/character-skills/CharacterSkillsPage.vala:124
 msgid "Intimidation"
 msgstr "Intimidación"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:132
+#: ui/pages/character-skills/CharacterSkillsPage.vala:125
 msgid "Performance"
 msgstr "Interpretación"
 
-#: ui/pages/character-skills/CharacterSkillsPage.vala:133
+#: ui/pages/character-skills/CharacterSkillsPage.vala:126
 msgid "Persuasion"
 msgstr "Persuación"
 
-#~ msgid "_Close"
+#~ msgid "Weapon"
+#~ msgstr "Arma"
+
+#~ msgid "Close"
 #~ msgstr "Cerrar"
 
-#~ msgid "_General"
+#~ msgid "General"
 #~ msgstr "General"
 
 #~ msgctxt "shortcut window"
-#~ msgid "_Open a Character"
+#~ msgid "Open a Character"
 #~ msgstr "Buscar Personaje"
 
 #~ msgctxt "shortcut window"
-#~ msgid "_Save the Character with a new filename"
+#~ msgid "Save the Character with a new filename"
 #~ msgstr "Guardar el personaje con un nombre nuevo"
