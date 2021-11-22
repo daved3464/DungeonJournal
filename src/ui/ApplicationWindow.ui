@@ -19,6 +19,46 @@
   </template>
 
 
+  <object class="GtkButton" id="back_button">
+    <signal name="clicked" handler="trigger_back_button" />
+    <child>
+      <object class="AdwButtonContent">
+        <property name="icon-name">go-previous-symbolic</property>
+      </object>
+    </child>
+  </object>
+
+  <object class="GtkButton" id="save_button">
+    <style>
+      <class name="destructive-action" />
+    </style>
+    <signal name="clicked" handler="trigger_on_save" />
+    <child>
+      <object class="GtkLabel">
+        <property name="label" translatable="yes">Save</property>
+      </object>
+    </child>
+  </object>
+
+  <object class="GtkMenuButton" id="menu_button">
+    <property name="menu-model">primary_menu</property>
+    <property name="icon-name">open-menu-symbolic</property>
+  </object>
+
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">Save As</attribute>
+        <attribute name="action">app.save_as</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">About</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+
+
   <object class="GtkBox" id="character_data">
     <property name="vexpand">1</property>
     <property name="orientation">vertical</property>

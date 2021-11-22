@@ -5,3 +5,5 @@ builddir/test
 .flatpak
 _build
 .buildconfig
+localbuild
+.vscode

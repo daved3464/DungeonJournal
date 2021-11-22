@@ -2,6 +2,6 @@
 
 ## Build the project in a test directory
 
-meson builddir -Dprofile=development --prefix ${HOME}/.local/devbuilds && \
-ninja -C builddir && \
-ninja -C builddir install
+meson localbuild  -Dprofile=development --prefix ${HOME}/.local/devbuilds && \
+ninja -C localbuild && \
+ninja -C localbuild install

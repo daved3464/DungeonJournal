@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dungeon Journal\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 10:24-0500\n"
-"PO-Revision-Date: 2021-11-22 10:25-0500\n"
+"POT-Creation-Date: 2021-11-22 16:31-0500\n"
+"PO-Revision-Date: 2021-11-22 16:32-0500\n"
 "Last-Translator: David Chamorro <daved3464@gmail.com>\n"
 "Language-Team: David Chamorro <daved3464@gmail.com>\n"
 "Language: es_CO\n"
@@ -25,42 +25,58 @@ msgstr "Cree algunos personajes"
 msgid "GitHub Homepage"
 msgstr "Página de GitHub"
 
-#: ui/ApplicationWindow.vala:80 ui/ApplicationWindow.vala:159
+#: ui/ApplicationWindow.ui:38 ui/ApplicationWindow.vala:191
 msgid "Save"
 msgstr "Guardar"
 
-#: ui/ApplicationWindow.vala:91 ui/pages/character-info/CharacterInfoPage.ui:62
+#: ui/ApplicationWindow.ui:51
+msgid "Save As"
+msgstr "Guardar como"
+
+#: ui/ApplicationWindow.ui:55
+msgid "About"
+msgstr "Acerca de"
+
+#: ui/ApplicationWindow.vala:81 ui/pages/character-info/CharacterInfoPage.ui:62
 msgid "Info"
 msgstr "Información"
 
-#: ui/ApplicationWindow.vala:92
+#: ui/ApplicationWindow.vala:82
 msgid "Inventory"
 msgstr "Inventario"
 
-#: ui/ApplicationWindow.vala:93
+#: ui/ApplicationWindow.vala:83
 msgid "Skills"
 msgstr "Habilidades"
 
-#: ui/ApplicationWindow.vala:127
+#: ui/ApplicationWindow.vala:122
 #: ui/pages/character-select/CharacterSelectPage.ui:54
 msgid "Open Character"
 msgstr "Buscar personaje"
 
-#: ui/ApplicationWindow.vala:130
-#: ui/pages/character-info/CharacterInfoPage.vala:305
+#: ui/ApplicationWindow.vala:125
+#: ui/pages/character-info/CharacterInfoPage.vala:288
 msgid "Open"
 msgstr "Abrir"
 
-#: ui/ApplicationWindow.vala:131 ui/ApplicationWindow.vala:160
-#: ui/pages/character-info/CharacterInfoPage.vala:306
+#: ui/ApplicationWindow.vala:126 ui/ApplicationWindow.vala:192
+#: ui/pages/character-info/CharacterInfoPage.vala:289
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ui/ApplicationWindow.vala:156
+#: ui/ApplicationWindow.vala:167
+msgid "Save Changes?"
+msgstr "¿Guardar los cambios?"
+
+#: ui/ApplicationWindow.vala:170
+msgid "This action will overwrite your character"
+msgstr "Esta acción sobreescribirá los datos de tu personaje"
+
+#: ui/ApplicationWindow.vala:188
 msgid "Save Character"
 msgstr "Guardar el personaje"
 
-#: ui/ApplicationWindow.vala:190
+#: ui/ApplicationWindow.vala:227
 msgid "Error opening character"
 msgstr "Error al abrir el personaje"
 
@@ -160,11 +176,11 @@ msgstr "Puntos de Golpe Temporales"
 msgid "Hit Dice"
 msgstr "Dado de Golpe"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:302
+#: ui/pages/character-info/CharacterInfoPage.vala:285
 msgid "Pick an Avatar"
 msgstr "Elija un Avatar"
 
-#: ui/pages/character-info/CharacterInfoPage.vala:320
+#: ui/pages/character-info/CharacterInfoPage.vala:303
 msgid "The size of the picture is bigger than the 5MB allowed size"
 msgstr "El tamaño de la imágen es mayor a los 5 MB permitidos"
 
@@ -197,31 +213,31 @@ msgstr "Moneda"
 msgid "Items"
 msgstr "Objetos"
 
-#: ui/pages/character-inventory/CharacterInventoryPage.vala:32
+#: ui/pages/character-inventory/CharacterInventoryPage.vala:34
 msgid "Copper"
 msgstr "Cobre"
 
-#: ui/pages/character-inventory/CharacterInventoryPage.vala:33
+#: ui/pages/character-inventory/CharacterInventoryPage.vala:35
 msgid "Silver"
 msgstr "Plata"
 
-#: ui/pages/character-inventory/CharacterInventoryPage.vala:34
+#: ui/pages/character-inventory/CharacterInventoryPage.vala:36
 msgid "Gold"
 msgstr "Oro"
 
-#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:56
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:57
 msgid "Quantity"
 msgstr "Cantidad"
 
-#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:70
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:72
 msgid "Cost"
 msgstr "Costo"
 
-#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:82
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:85
 msgid "Weight"
 msgstr "Peso"
 
-#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:108
+#: ui/pages/character-inventory/widgets/CharacterItemRow.ui:112
 msgid "Description"
 msgstr "Descripción"
 

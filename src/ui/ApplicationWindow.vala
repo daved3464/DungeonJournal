@@ -7,6 +7,15 @@ namespace DungeonJournal {
     public class ApplicationWindow : Adw.ApplicationWindow {
 
         [GtkChild]
+        private unowned Button back_button;
+
+        [GtkChild]
+        private unowned Button save_button;
+
+        [GtkChild]
+        private unowned MenuButton menu_button;
+
+        [GtkChild]
         private unowned Adw.ToastOverlay toast_overlay;
 
         [GtkChild]
@@ -58,29 +67,10 @@ namespace DungeonJournal {
 
         private void setup_stack() {
 
-            // Set back button
-            var back_button_content = new Adw.ButtonContent();
-            back_button_content.set_icon_name("go-previous-symbolic");
+            this.character_data_headerbar.pack_start(this.back_button);
+            this.character_data_headerbar.pack_end(this.menu_button);
+            this.character_data_headerbar.pack_end(this.save_button);
 
-            var back_button = new Button();
-            back_button.set_child(back_button_content);
-
-            back_button.clicked.connect(() => {
-                this.show_welcome_screen();
-            });
-
-            this.character_data_headerbar.pack_start(back_button);
-
-            // Set save button
-            string[] button_class = { "destructive-action" };
-            var button = new Button();
-            button.clicked.connect(() => {
-                this.on_save();
-            });
-            button.set_child(new Label(_("Save")));
-            button.set_css_classes(button_class);
-
-            this.character_data_headerbar.pack_end(button);
 
             // Add pages to stack
 
@@ -119,6 +109,11 @@ namespace DungeonJournal {
             this.show_character_data();
         }
 
+        [GtkCallback]
+        public void trigger_back_button() {
+            this.show_welcome_screen();
+        }
+
         public void on_open() {
             var filter = new FileFilter();
             filter.add_mime_type("application/json");
@@ -143,11 +138,48 @@ namespace DungeonJournal {
             });
         }
 
+        [GtkCallback]
+        public void trigger_on_save() {
+
+
+            this.on_save();
+        }
+
         public void on_save() {
             if (this.character_path == null) {
                 this.on_save_as();
             } else {
-                this.save_character(this.character_path);
+
+                var dialog_flags = Gtk.DialogFlags.DESTROY_WITH_PARENT | Gtk.DialogFlags.MODAL;
+
+                var confirm_dialog = new Gtk.MessageDialog(
+                    this,
+                    dialog_flags,
+                    Gtk.MessageType.WARNING,
+                    Gtk.ButtonsType.OK_CANCEL,
+                    null,
+                    null
+                );
+
+                var primary_text = (Label) confirm_dialog.get_message_area().get_first_child();
+                var secondary_text = (Label) confirm_dialog.get_message_area().get_last_child();
+
+                primary_text.set_text(_("Save Changes?"));
+                primary_text.set_css_classes({ "title-3" });
+
+                secondary_text.set_text(_("This action will overwrite your character"));
+                secondary_text.set_visible(true);
+
+                confirm_dialog.response.connect((res) => {
+
+                    if (res == ResponseType.OK || res == ResponseType.ACCEPT) {
+                        this.save_character(this.character_path);
+                    }
+
+                    confirm_dialog.destroy();
+                });
+
+                confirm_dialog.present();
             }
         }
 
@@ -176,15 +208,20 @@ namespace DungeonJournal {
         public bool open_character(string file_path) {
             try {
                 var parser = new Json.Parser();
+
                 parser.load_from_file(file_path);
 
                 Json.Node node = parser.get_root();
 
+                this.character_path = file_path;
+                this.add_recent_file(file_path);
+
                 this.character = Json.gobject_deserialize(typeof (CharacterSheet), node) as CharacterSheet;
 
                 this.bind_character();
-                this.add_recent_file(file_path);
-                this.character_path = file_path;
+
+                this.show_character_data();
+
                 return true;
             } catch (Error e) {
                 this.toast_overlay.add_toast(new Toast(_("Error opening character")));

@@ -6,6 +6,8 @@ project('dungeonjournal', ['c', 'vala'],
 gnome = import('gnome')
 i18n = import('i18n')
 
+app_id = 'io.github.daved3464.DungeonJournal'
+
 # Add custom VAPI dir
 add_project_arguments(
   ['--vapidir', meson.source_root() / 'vapi'],  
@@ -13,14 +15,12 @@ add_project_arguments(
 )
 
 # Application ID
-if get_option('profile') == 'development'
-  app_id = 'io.github.daved3464.DungeonJournal.Devel'  
+if get_option('profile') == 'development'  
   add_project_arguments(
  '--debug',
   language: 'vala'
 )
-else
-  app_id = 'io.github.daved3464.DungeonJournal'
+  
 endif
 
 
