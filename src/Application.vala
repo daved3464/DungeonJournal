@@ -30,6 +30,7 @@ namespace DungeonJournal {
 
         protected override void activate() {
             this.window = new DungeonJournal.ApplicationWindow(this);
+            this.window.present();
         }
 
         private void setup_actions() {
@@ -42,7 +43,7 @@ namespace DungeonJournal {
             var open_action = new GLib.SimpleAction("open", null);
             open_action.activate.connect(() =>
             {
-                this.window.on_open(this.window);
+                this.window.on_open();
             });
 
             var save_action = new GLib.SimpleAction("save", null);

@@ -1,9 +1,9 @@
 using Gtk;
-
+using Adw;
 namespace DungeonJournal {
     [GtkTemplate(ui = "/io/github/daved3464/DungeonJournal/ui/widgets/SpinButtonCheckboxRow.ui")]
-    public class SpinButtonCheckboxRow : Gtk.ListBoxRow {
-        [GtkChild] protected unowned Label label;
+    public class SpinButtonCheckboxRow : ActionRow {
+
         [GtkChild] protected unowned SpinButton spinbutton;
         [GtkChild] protected unowned Adjustment adjustment;
         [GtkChild] protected unowned CheckButton checkbox;
@@ -28,13 +28,13 @@ namespace DungeonJournal {
             }
         }
 
-        public SpinButtonCheckboxRow(string label) {
+        public SpinButtonCheckboxRow(string title) {
             Object();
             this.connect_signals();
 
             this.adjustment.lower = -5;
 
-            this.label.label = label;
+            this.title = title;
         }
 
         private void connect_signals() {

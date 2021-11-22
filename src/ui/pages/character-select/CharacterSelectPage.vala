@@ -2,8 +2,8 @@ using Adw;
 using Gtk;
 
 namespace DungeonJournal {
-    [GtkTemplate(ui = "/io/github/daved3464/DungeonJournal/ui/StartupWindow.ui")]
-    public class StartupWindow : Adw.Window {
+    [GtkTemplate(ui = "/io/github/daved3464/DungeonJournal/ui/pages/character-select/CharacterSelectPage.ui")]
+    public class CharacterSelectPage : Box {
         private DungeonJournal.ApplicationWindow window;
 
         [GtkChild] private unowned Box recents_box;
@@ -11,20 +11,15 @@ namespace DungeonJournal {
 
         private bool done_startup { get; set; default = false; }
 
-        public StartupWindow(DungeonJournal.ApplicationWindow window) {
+        public CharacterSelectPage(DungeonJournal.ApplicationWindow window) {
             Object();
 
             this.window = window;
 
             this.setup_recents();
-
-            this.close_request.connect(() => {
-                return this.on_close();
-            });
         }
 
         public void show_all() {
-            base.present();
             this.hide_listbox_if_empty();
         }
 
@@ -43,28 +38,14 @@ namespace DungeonJournal {
             }
         }
 
-        public void finish_startup() {
-            this.done_startup = true;
-            this.window.show();
-            this.hide();
-        }
-
-        private bool on_close() {
-            if (!this.done_startup) {
-                this.window.destroy();
-                this.application = null;
-            }
-            return false;
-        }
-
         [GtkCallback]
         private void on_open() {
-            this.window.on_open(this);
+            this.window.on_open();
         }
 
         [GtkCallback]
         private void on_new() {
-            this.finish_startup();
+            this.window.new_character();
         }
 
         [GtkCallback]
@@ -73,7 +54,7 @@ namespace DungeonJournal {
             var found = this.window.open_character(char_row.file_path);
 
             if (found) {
-                this.finish_startup();
+                this.window.show_character_data();
             }
         }
 

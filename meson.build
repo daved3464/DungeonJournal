@@ -8,13 +8,17 @@ i18n = import('i18n')
 
 # Add custom VAPI dir
 add_project_arguments(
-  ['--vapidir', meson.source_root() / 'vapi'],
+  ['--vapidir', meson.source_root() / 'vapi'],  
   language: 'vala'
 )
 
 # Application ID
 if get_option('profile') == 'development'
-  app_id = 'io.github.daved3464.DungeonJournal.Devel'
+  app_id = 'io.github.daved3464.DungeonJournal.Devel'  
+  add_project_arguments(
+ '--debug',
+  language: 'vala'
+)
 else
   app_id = 'io.github.daved3464.DungeonJournal'
 endif

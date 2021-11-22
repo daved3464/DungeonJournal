@@ -1,21 +1,22 @@
 using Gtk;
+using Adw;
 
 namespace DungeonJournal {
     [GtkTemplate(ui = "/io/github/daved3464/DungeonJournal/ui/pages/character-inventory/widgets/CharacterItemRow.ui")]
-    public class CharacterItemRow : ListBoxRow, CharacterRowInterface {
-        [GtkChild] protected unowned Label name_label;
-        [GtkChild] protected unowned Label quantity_label;
-        [GtkChild] protected unowned Button expand_button { get; }
+    public class CharacterItemRow : ExpanderRow {
+
         [GtkChild] protected unowned Button delete_button { get; }
-        [GtkChild] protected unowned Image expand_image { get; }
-        [GtkChild] protected unowned Box expand_box { get; }
 
         [GtkChild] protected unowned Entry name_entry;
+
         [GtkChild] protected unowned SpinButton quantity_spinbutton;
         [GtkChild] protected unowned Adjustment quantity_adjustment;
+
         [GtkChild] protected unowned Entry cost_entry;
+
         [GtkChild] protected unowned SpinButton weight_spinbutton;
         [GtkChild] protected unowned Adjustment weight_adjustment;
+
         [GtkChild] protected unowned TextView description_entry;
 
         public CharacterItem item { get; set; }
@@ -31,9 +32,10 @@ namespace DungeonJournal {
             this.item.bind_property("weight", this.weight_adjustment, "value", Util.BINDING_FLAGS);
             this.item.bind_property("description", this.description_entry.buffer, "text", Util.BINDING_FLAGS);
 
-            this.name_entry.bind_property("text", this.name_label, "label", BindingFlags.SYNC_CREATE);
+            this.name_entry.bind_property("text", this, "title", BindingFlags.SYNC_CREATE);
+
             this.quantity_adjustment.bind_property(
-                "value", this.quantity_label, "label", BindingFlags.SYNC_CREATE,
+                "value", this, "subtitle", BindingFlags.SYNC_CREATE,
                 (binding, srcval, ref targetval) => {
                 double src = (double) srcval;
                 targetval.set_string(@"x$((int) src)");
@@ -42,13 +44,9 @@ namespace DungeonJournal {
         }
 
         [GtkCallback]
-        private void on_expand_button_clicked() {
-            this.expand_button_clicked();
-        }
-
-        [GtkCallback]
         private void on_delete_button_clicked() {
-            this.delete_button_clicked();
+            var parent = (ListBox) this.parent;
+            parent.row_activated(this);
         }
     }
 }

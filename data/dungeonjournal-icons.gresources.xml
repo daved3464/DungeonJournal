@@ -5,11 +5,15 @@
         <file preprocess="xml-stripblanks">icons/scalable/apps/book-skill-up-symbolic.svg</file>
         <file preprocess="xml-stripblanks">icons/scalable/apps/book-symbolic.svg</file>
         <file preprocess="xml-stripblanks">icons/scalable/apps/skill-vision-symbolic.svg</file>
+        <file preprocess="xml-stripblanks">icons/scalable/apps/character-symbolic.svg</file>
+        <file preprocess="xml-stripblanks">icons/scalable/apps/house-symbolic.svg</file>
     </gresource>
     <gresource prefix="/io/github/daved3464/DungeonJournal/Devel">
         <file preprocess="xml-stripblanks">icons/scalable/apps/basic-bag-symbolic.svg</file>
         <file preprocess="xml-stripblanks">icons/scalable/apps/book-skill-up-symbolic.svg</file>
         <file preprocess="xml-stripblanks">icons/scalable/apps/book-symbolic.svg</file>
         <file preprocess="xml-stripblanks">icons/scalable/apps/skill-vision-symbolic.svg</file>
+        <file preprocess="xml-stripblanks">icons/scalable/apps/character-symbolic.svg</file>
+        <file preprocess="xml-stripblanks">icons/scalable/apps/house-symbolic.svg</file>
     </gresource>
 </gresources>

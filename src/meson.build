@@ -12,12 +12,12 @@ dungeonjournal_sources = [
 
   ## Main Window
   'ui/ApplicationWindow.vala',
-  'ui/StartupWindow.vala',  
+
+  'ui/pages/character-select/CharacterSelectPage.vala',  
 
   ## Main Components 
   'ui/widgets/CharacterRowInterface.vala',
-  'ui/widgets/RecentsCharacterRow.vala',
-  'ui/widgets/SeparatorRow.vala',
+  'ui/widgets/RecentsCharacterRow.vala',  
   'ui/widgets/SpinButtonRow.vala',
   'ui/widgets/SpinButtonCheckboxRow.vala',
   'ui/widgets/EntryRow.vala',
@@ -25,11 +25,11 @@ dungeonjournal_sources = [
 
   ## Character Info Page
   'ui/pages/character-info/CharacterInfoPage.vala',  
+  'ui/pages/character-info/widgets/CharacterAttackRow.vala',
   'ui/pages/character-info/widgets/CharacterFeatRow.vala',
 
   ## Character Inventory Page
-  'ui/pages/character-inventory/CharacterInventoryPage.vala',
-  'ui/pages/character-inventory/widgets/CharacterAttackRow.vala',
+  'ui/pages/character-inventory/CharacterInventoryPage.vala',  
   'ui/pages/character-inventory/widgets/CharacterItemRow.vala',
 
   ## Character Skills Page

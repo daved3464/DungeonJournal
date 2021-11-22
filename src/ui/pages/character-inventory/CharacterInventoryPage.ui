@@ -43,7 +43,7 @@
                     <!-- Currency List -->
                     <child>
                       <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Currency</property>
+                        <property name="title" translatable="yes">Currency</property>
                         <child>
                           <object class="GtkListBox" id="currency_listbox">
                             <style>
@@ -55,64 +55,29 @@
                       </object>
                     </child>
 
-                    <!-- Attacks List-->
-                    <child>
-                      <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Attacks</property>
-                        <child>
-                          <object class="GtkListBox" id="attacks_listbox">
-                            <style>
-                              <class name="content"></class>
-                            </style>
-                            <property name="selection_mode">none</property>
-                            <signal name="row-activated" handler="on_attacks_row_clicked" swapped="no" />
-                            <child>
-                              <object class="GtkListBoxRow" id="attacks_row_button">
-                                <property name="width_request">100</property>
-
-
-                                <property name="selectable">False</property>
-                                <child>
-                                  <object class="GtkImage">
-
-
-                                    <property name="margin-top">12</property>
-                                    <property name="margin-bottom">12</property>
-                                    <property name="icon-name">list-add-symbolic</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
 
                     <!-- Items List -->
                     <child>
-                      <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Items</property>
+                      <object class="AdwPreferencesGroup" id="items_group">
+                        <property name="title" translatable="yes">Items</property>
+
                         <child>
-                          <object class="GtkListBox" id="items_listbox">
+                          <object class="GtkButton">
                             <style>
-                              <class name="content"></class>
+                              <class name="circular" />
+                              <class name="suggested-action" />
                             </style>
-                            <property name="selection_mode">none</property>
-                            <signal name="row-activated" handler="on_items_row_clicked" swapped="no" />
-                            <child>
-                              <object class="GtkListBoxRow" id="items_row_button">
-                                <property name="selectable">0</property>
-                                <property name="child">
-                                  <object class="GtkImage">
-                                    <property name="margin-top">12</property>
-                                    <property name="margin-bottom">12</property>
-                                    <property name="icon-name">list-add-symbolic</property>
-                                  </object>
-                                </property>
+                            <signal name="clicked" handler="trigger_add_item_row" />
+                            <property name="halign">center</property>
+                            <property name="margin-bottom">12</property>
+                            <property name="child">
+                              <object class="AdwButtonContent">
+                                <property name="icon-name">list-add-symbolic</property>
                               </object>
-                            </child>
+                            </property>
                           </object>
                         </child>
+
                       </object>
                     </child>
 

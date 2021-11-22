@@ -49,7 +49,7 @@
                     <!-- Strength based skills -->
                     <child>
                       <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Strength</property>
+                        <property name="title" translatable="yes">Strength</property>
                         <child>
                           <object class="GtkListBox" id="strength_listbox">
                             <style>
@@ -64,7 +64,7 @@
                     <!-- Dexterity based skills -->
                     <child>
                       <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Dexterity</property>
+                        <property name="title" translatable="yes">Dexterity</property>
                         <child>
                           <object class="GtkListBox" id="dexterity_listbox">
                             <style>
@@ -79,7 +79,7 @@
                     <!-- Constitution based skills -->
                     <child>
                       <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Constitution</property>
+                        <property name="title" translatable="yes">Constitution</property>
                         <child>
                           <object class="GtkListBox" id="constitution_listbox">
                             <style>
@@ -94,7 +94,7 @@
                     <!-- Intelligence based skills -->
                     <child>
                       <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Intelligence</property>
+                        <property name="title" translatable="yes">Intelligence</property>
                         <child>
                           <object class="GtkListBox" id="intelligence_listbox">
                             <style>
@@ -109,7 +109,7 @@
                     <!-- Wisdom based skills -->
                     <child>
                       <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Wisdom</property>
+                        <property name="title" translatable="yes">Wisdom</property>
                         <child>
                           <object class="GtkListBox" id="wisdom_listbox">
                             <style>
@@ -124,7 +124,7 @@
                     <!-- Charisma based skills -->
                     <child>
                       <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Charisma</property>
+                        <property name="title" translatable="yes">Charisma</property>
                         <child>
                           <object class="GtkListBox" id="charisma_listbox">
                             <style>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   x="0px"
+   y="0px"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="item-coin-symbolic.svg"
+   width="512"
+   height="512"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.65"
+     inkscape:cx="120"
+     inkscape:cy="320"
+     inkscape:window-width="1366"
+     inkscape:window-height="699"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <title
+     id="title2">item coin</title>
+  <path
+     d="M 256,412.17 C 342.11,412.17 412.17,342.12 412.17,256 412.17,169.88 342.11,99.83 256,99.83 169.89,99.83 99.82,169.88 99.82,256 c 0,86.12 70.06,156.17 156.18,156.17 z M 209.73,229 A 19.25,19.25 0 0 1 229,209.73 h 54 A 19.25,19.25 0 0 1 302.27,229 v 54 A 19.25,19.25 0 0 1 283,302.27 H 229 A 19.25,19.25 0 0 1 209.73,283 Z"
+     id="path4" />
+  <path
+     d="M 256,488.07 C 384.17,488.07 488.07,384.17 488.07,256 488.07,127.83 384.17,23.93 256,23.93 127.83,23.93 23.93,127.83 23.93,256 c 0,128.17 103.9,232.07 232.07,232.07 z m 0,-408.58 c 97.33,0 176.51,79.18 176.51,176.51 0,97.33 -79.18,176.51 -176.51,176.51 C 158.67,432.51 79.49,353.33 79.49,256 79.49,158.67 158.67,79.49 256,79.49 Z"
+     id="path6" />
+  <metadata
+     id="metadata18">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>item coin</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

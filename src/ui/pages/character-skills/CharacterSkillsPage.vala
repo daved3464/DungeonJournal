@@ -32,8 +32,12 @@ namespace DungeonJournal {
         protected HashMap<Ability, ListBox> abilities;
         protected ArrayList<ListBoxRow> skills;
 
-        public CharacterSkillsPage() {
+        protected DungeonJournal.ApplicationWindow window;
+
+        public CharacterSkillsPage(DungeonJournal.ApplicationWindow window) {
             Object();
+
+            this.window = window;
 
             this.abilities = new HashMap<Ability, ListBox>();
 

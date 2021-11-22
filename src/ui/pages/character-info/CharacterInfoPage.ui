@@ -38,6 +38,7 @@
                     <property name="orientation">vertical</property>
                     <property name="spacing">16</property>
 
+                    <!-- Avatar -->
                     <child>
                       <object class="GtkButton">
                         <signal name="clicked" handler="change_avatar_trigger" />
@@ -55,9 +56,10 @@
                       </object>
                     </child>
 
+                    <!-- Info group -->
                     <child>
                       <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Info</property>
+                        <property name="title" translatable="yes">Info</property>
                         <child>
                           <object class="GtkListBox" id="info_listbox">
                             <style>
@@ -69,9 +71,11 @@
                       </object>
                     </child>
 
+
+                    <!-- Stats group -->
                     <child>
                       <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Stats</property>
+                        <property name="title" translatable="yes">Stats</property>
                         <child>
                           <object class="GtkListBox" id="stats_listbox">
                             <style>
@@ -83,45 +87,62 @@
                       </object>
                     </child>
 
+                    <!-- Attacks Group-->
                     <child>
-                      <object class="AdwPreferencesGroup">
-                        <property name="title" translatable="yes">_Features</property>
+                      <object class="AdwPreferencesGroup" id="attacks_group">
+                        <property name="title" translatable="yes">Attacks</property>
                         <child>
-                          <object class="GtkListBox" id="feats_listbox">
+                          <object class="GtkButton">
                             <style>
-                              <class name="content"></class>
+                              <class name="circular" />
+                              <class name="suggested-action" />
                             </style>
-                            <property name="selection_mode">none</property>
-                            <signal name="row-activated" handler="on_feats_row_clicked" />
-
-                            <!-- Add New Feat Widget -->
-                            <child>
-                              <object class="GtkListBoxRow" id="feats_row_button">
-                                <property name="selectable">0</property>
-                                <property name="child">
-                                  <object class="GtkImage">
-                                    <property name="margin-top">12</property>
-                                    <property name="margin-bottom">12</property>
-                                    <property name="icon-name">list-add-symbolic</property>
-                                  </object>
-                                </property>
+                            <signal name="clicked" handler="trigger_add_attack_row" />
+                            <property name="halign">center</property>
+                            <property name="margin-bottom">12</property>
+                            <property name="child">
+                              <object class="AdwButtonContent">
+                                <property name="icon-name">list-add-symbolic</property>
                               </object>
-                            </child>
+                            </property>
                           </object>
                         </child>
                       </object>
                     </child>
+
+                    <!-- Feats Group -->
+                    <child>
+                      <object class="AdwPreferencesGroup" id="feats_group">
+                        <property name="title" translatable="yes">Features</property>
+                        <child>
+                          <object class="GtkButton">
+                            <signal name="clicked" handler="trigger_add_feat_row" />
+                            <style>
+                              <class name="circular" />
+                              <class name="suggested-action" />
+                            </style>
+                            <property name="halign">center</property>
+                            <property name="margin-bottom">12</property>
+                            <property name="child">
+                              <object class="AdwButtonContent">
+                                <property name="icon-name">list-add-symbolic</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+
+
                   </object>
                 </property>
               </object>
-
-
             </property>
-
-
           </object>
         </property>
       </object>
     </child>
   </template>
+
+
 </interface>

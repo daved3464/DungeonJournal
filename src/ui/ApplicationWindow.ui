@@ -8,36 +8,44 @@
     <property name="icon-name">io.github.daved3464.DungeonJournal</property>
     <property name="title">Dungeon Journal</property>
     <property name="content">
-      <object class="GtkBox">
-        <property name="vexpand">1</property>
-        <property name="orientation">vertical</property>
-        <child>
-          <object class="AdwHeaderBar" id="headerbar">
-            <property name="centering-policy">strict</property>
-            <property name="title-widget">
-              <object class="AdwViewSwitcherTitle" id="switcher_title">
-                <property name="stack">stack</property>
-                <property name="title" bind-source="DungeonJournalApplicationWindow" bind-property="title" bind-flags="sync-create" />
-              </object>
-            </property>
+      <object class="AdwToastOverlay" id="toast_overlay">
+        <property name="child">
+          <object class="AdwViewStack" id="content_container">
+            <property name="vexpand">1</property>
           </object>
-        </child>
-
-        <child>
-          <object class="AdwViewStack" id="stack">
-            <property name="vexpand">True</property>
-          </object>
-        </child>
-
-        <child>
-          <object class="AdwViewSwitcherBar" id="switcher_bar">
-            <property name="stack">stack</property>
-            <property name="reveal" bind-source="switcher_title" bind-property="title-visible" bind-flags="sync-create" />
-          </object>
-        </child>
+        </property>
       </object>
     </property>
   </template>
 
+
+  <object class="GtkBox" id="character_data">
+    <property name="vexpand">1</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="AdwHeaderBar" id="character_data_headerbar">
+        <property name="centering-policy">strict</property>
+        <property name="title-widget">
+          <object class="AdwViewSwitcherTitle" id="switcher_title">
+            <property name="stack">stack</property>
+            <property name="title" bind-source="DungeonJournalApplicationWindow" bind-property="title" bind-flags="sync-create" />
+          </object>
+        </property>
+      </object>
+    </child>
+
+    <child>
+      <object class="AdwViewStack" id="stack">
+        <property name="vexpand">True</property>
+      </object>
+    </child>
+
+    <child>
+      <object class="AdwViewSwitcherBar" id="switcher_bar">
+        <property name="stack">stack</property>
+        <property name="reveal" bind-source="switcher_title" bind-property="title-visible" bind-flags="sync-create" />
+      </object>
+    </child>
+  </object>
 
 </interface>

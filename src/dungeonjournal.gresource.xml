@@ -8,21 +8,24 @@
         <file compressed="true" preprocess="xml-stripblanks">ui/widgets/SpinButtonCheckboxRow.ui</file>
         <file compressed="true" preprocess="xml-stripblanks">ui/widgets/RecentsCharacterRow.ui</file>
 
+        <!-- Main Window -->
+        <file compressed="true" preprocess="xml-stripblanks">ui/ApplicationWindow.ui</file>
+
+        <!-- Character Select Page -->
+        <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-select/CharacterSelectPage.ui</file>
+
         <!-- Character Info Page -->
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/CharacterInfoPage.ui</file>
+        <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/widgets/CharacterAttackRow.ui</file>
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-info/widgets/CharacterFeatRow.ui</file>
 
         <!-- Character Inventory Page -->
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-inventory/CharacterInventoryPage.ui</file>
-        <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-inventory/widgets/CharacterAttackRow.ui</file>
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-inventory/widgets/CharacterItemRow.ui</file>
 
         <!-- Character Skills Page -->
         <file compressed="true" preprocess="xml-stripblanks">ui/pages/character-skills/CharacterSkillsPage.ui</file>
 
-        <!-- Main Windows -->
-        <file compressed="true" preprocess="xml-stripblanks">ui/ApplicationWindow.ui</file>
-        <file compressed="true" preprocess="xml-stripblanks">ui/StartupWindow.ui</file>
 
     </gresource>
 </gresources>
