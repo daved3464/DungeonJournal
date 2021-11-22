@@ -41,6 +41,7 @@
                     <!-- Avatar -->
                     <child>
                       <object class="GtkButton">
+                        <property name="margin-top">12</property>
                         <signal name="clicked" handler="change_avatar_trigger" />
                         <style>
                           <class name="flat" />
